@@ -2,6 +2,18 @@
     font-family: Montserrat;
     src: url(montserrat/Montserrat-VariableFont_wght.ttf);
 }
+@font-face {
+    font-family: Oswald-Bold;
+    src: url(oswald/Oswald-Bold.ttf);
+}
+@font-face {
+    font-family: Oswald-Regular;
+    src: url(oswald/Oswald-Regular.ttf);
+}
+@font-face {
+    font-family: Oswald-Light;
+    src: url(oswald/Oswald-Light.ttf);
+}
 
 .head_block {
     position: absolute;
@@ -16,12 +28,14 @@
     position: absolute;
     top: 25px;
     left: 261px;
+    width: 197px;
+    height: 50px;
 }
 
 #head_text {
     position: absolute;
     left: 1307px;
-    top: 35px;
+    top: 37px;
     color: #F7992B;
     text-align: center;
     font-family: Montserrat;
@@ -34,7 +48,7 @@
 #head_text1 {
     position: absolute;
     left: 1394px;
-    top: 35px;
+    top: 37px;
     color: #FFFFFF;
     text-align: center;
     font-family: Montserrat;
@@ -51,7 +65,7 @@
 #head_text2 {
     position: absolute;
     left: 1481px;
-    top: 35px;
+    top: 37px;
     color: #FFFFFF;
     text-align: center;
     font-family: Montserrat;
@@ -68,7 +82,7 @@
 #head_text3 {
     position: absolute;
     left: 1589px;
-    top: 35px;
+    top: 37px;
     color: #FFFFFF;
     text-align: center;
     font-family: Montserrat;
@@ -84,3 +98,51 @@
 }
 
 
+.start_block {
+    position: absolute;
+    left: 0px;
+    top: 100px;
+    width: 1920px;
+    height: 1288px;
+}
+
+#start_title {
+    position: absolute;
+    left: 595px;
+    top: 514px;
+    color: #FFF;
+    font-family: Oswald-Bold;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+#start_title1 {
+    position: absolute;
+    left: 680px;
+    top: 660px;
+    color: #FFF;
+    font-family: Oswald-Light;
+    font-size: 38px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+#view_more1 {
+    position: absolute;
+    left: 846px;
+    top: 776px;
+    width: 227px;
+    height: 62px;
+    background: #F7992B;
+}
+#vivew_more1_p {
+    color: #FFF;
+    text-align: center;
+    font-family: Oswald-Regular;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 5.95px;
+}
