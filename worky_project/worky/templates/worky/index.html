@@ -3,6 +3,9 @@
   <head>
     <title>Home</title>
     <link href="\static\styles\style.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\style_about.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\style_about_2.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\yellow_and_black_blocks.css" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div class="head_block" >
@@ -18,11 +21,67 @@
         <a href="" id="head_text3"> BLOG </a>
       </div>
     </div>
+    {% block body %}
     <div class="start_block">
       <img src="\static\start_img.png" style="width: 1920px; height: 1288px;">
       <p id="start_title">WE BUILD THE FUTURE</p>
       <p id="start_title1">Best Ideas – Best Solution – Best Result</p>
       <a href=""><div id="view_more1"><p id="view_more1_p">VIEW MORE</p></div></a>
     </div>
+    <div class="about_company_block">
+      <p id="small_words1">ABOUT COMPANY</p>
+      <p id="big_words1">WE CREATE<br>
+        AND TURN INTO 
+        REALITY</p>
+      <svg width="85" height="5" viewBox="0 0 85 5" fill="none" xmlns="http://www.w3.org/2000/svg" id="line1">
+        <line y1="2.30121" x2="85" y2="2.30121" stroke="#F7992B" stroke-width="4"/>
+      </svg>
+      <p id="text_about_company_block"><b>We apply innovative design solutions to enhance people’s 
+        residential wellbeing and
+        to help workplaces succeed! All our team collaborates with our clients!</b></p>
+      <p id="text_about_company_block1">All our team collaborates with our clients, across all of our 3 offices, 
+        which are located throughout the US. Our mission is to implement the outstanding 
+        design ideas and solutions for any project we’re working on… During that process 
+        we carefully combine client’s guidelines, technical possibilities, as well as the 
+        environmental issues. Engineering and interior design solutions that we deliver 
+        are usually born after a collaborative process.</p>
+      <img src="\static\photo_1_about_block.png" id="photo_1_about_block"><a href="" id="link_arch">ARCHITECTURE</a>
+      <img src="\static\photo_2_about_block.png" id="photo_2_about_block"><a href="" id="link_engi">ENGINEERING</a>
+      <img src="\static\photo_3_about_block.png" id="photo_3_about_block"><a href="" id="link_inte">INTERIOR DESIGN</a>
+    </div>
+    <div class="yellow_block">
+      <img src="\static\for_yellow_block.png" id="img_for_yellow_block">
+      <p id="small_words_yb">TESTIMONIALS</p>
+      <p id="big_words_yb">WHAT OUR<br>
+        CLIENTS SAY</p>
+      <svg width="85" height="5" viewBox="0 0 85 5" fill="none" xmlns="http://www.w3.org/2000/svg" id="line_yb">
+        <line y1="2.30121" x2="85" y2="2.30121" stroke="#FFFFFF" stroke-width="4"/>
+      </svg>
+      <p id="client_text">
+        It is not every construction company that can build a building from<br> 
+        ground up and complete 80,000 sq. ft. of first class office improvement<br> 
+        space in 13 months.
+      </p>
+      <p id="client"><b>KENT</b>, POSTED ON <br>EVERYWHERE</p>
+    </div>
+    <div class="black_block">
+      <p id="small_words_bb">ADVANTAGES</p>
+      <p id="big_words_bb">WORKING ON EXCLUSIVE PROJECTS</p>
+      <svg width="85" height="5" viewBox="0 0 85 5" fill="none" xmlns="http://www.w3.org/2000/svg" id="line_bb">
+        <line y1="2.30121" x2="85" y2="2.30121" stroke="#F7992B" stroke-width="4"/>
+      </svg>
+      <p id="ep_text">
+        Designing sustainable, high-performance buildings requires an integration
+        of architectural and engineered systems into a balanced design of
+        sustainability and cost-effectiveness. Archus merges these practices with 
+        the unique requirements and guidelines necessary for advanced technology facilities.
+      </p>
+      <a href="">
+        <div id="view_more1_bb">
+          <p id="vivew_more1_p_bb">VIEW MORE</p>
+        </div>
+      </a>
+    </div>
+    {% endblock %}
   </body>
 </html>
