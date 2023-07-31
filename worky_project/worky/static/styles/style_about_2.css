@@ -1,0 +1,91 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Oswald-Bold;
+    src: url(oswald/Oswald-Bold.ttf);
+}
+@font-face {
+    font-family: Oswald-Regular;
+    src: url(oswald/Oswald-Regular.ttf);
+}
+@font-face {
+    font-family: Oswald-Light;
+    src: url(oswald/Oswald-Light.ttf);
+}
+
+
+#photo_1_about_block {
+    width: 302px;
+    height: 384px;
+    position: absolute;
+    top: 371px;
+}
+
+#photo_2_about_block {
+    width: 302px;
+    height: 384px;
+    position: absolute;
+    top: 371px;
+    left: 354px;
+}
+
+#photo_3_about_block {
+    width: 302px;
+    height: 384px;
+    position: absolute;
+    top: 371px;
+    left: 708px;
+}
+
+#link_arch {
+    position: absolute;
+    left: 89px;
+    top: 639px;
+    text-decoration: none;
+    color: #FFF;
+    font-family: Oswald-Regular;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30.5px; 
+    transition: color 0.3s ease;
+}
+#link_arch:hover {
+    color: #F7992B;
+}
+
+#link_engi {
+    position: absolute;
+    left: 449px;
+    top: 639px;
+    text-decoration: none;
+    color: #FFF;
+    font-family: Oswald-Regular;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30.5px; 
+    transition: color 0.3s ease;
+}
+#link_engi:hover {
+    color: #F7992B;
+}
+
+#link_inte {
+    position: absolute;
+    left: 787px;
+    top: 639px;
+    text-decoration: none;
+    color: #FFF;
+    font-family: Oswald-Regular;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 30.5px;
+    transition: color 0.3s ease; 
+}
+#link_inte:hover {
+    color: #F7992B;
+}

@@ -1,0 +1,166 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Oswald-Bold;
+    src: url(oswald/Oswald-Bold.ttf);
+}
+@font-face {
+    font-family: Oswald-Regular;
+    src: url(oswald/Oswald-Regular.ttf);
+}
+@font-face {
+    font-family: Oswald-Light;
+    src: url(oswald/Oswald-Light.ttf);
+}
+
+.yellow_block {
+    position: absolute;
+    left: 975px;
+    top: 2443px;
+    width: 945px;
+    height: 586px;
+    background: #F7992B;
+}
+
+#img_for_yellow_block {
+    position: absolute;
+    width: 945px;
+    height: 586px;
+    opacity: 0.2;
+}
+
+#small_words_yb {
+    position: absolute;
+    top: 100px;
+    left: 182px;
+    color: #fff;
+    text-align: center;
+    font-family: Oswald-Light;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}
+
+#big_words_yb {
+    width: 317px;
+    height: 211.301px;
+    position: absolute;
+    top: 109px;
+    left: 180px;
+    color: #fff;
+    font-family: Oswald-Bold;
+    font-size: 43px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 55px;
+}
+
+#line_yb {
+    position: absolute;
+    left: 177px;
+    top: 270px;
+}
+
+#client_text {
+    position: absolute;
+    left: 184px;
+    top: 311px;
+    width: 617.465px;
+    height: 89px;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#client {
+    position: absolute;
+    left: 184px;
+    top: 409px;
+    color: #FFF;
+    font-family: Oswald-Light;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+}
+
+.black_block {
+    position: absolute;
+    left: 0px;
+    top: 2443px;
+    width: 975px;
+    height: 586px;
+    background: #000;
+}
+
+#small_words_bb {
+    position: absolute;
+    top: 100px;
+    left: 182px;
+    color: #fff;
+    text-align: center;
+    font-family: Oswald-Light;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}
+
+#big_words_bb {
+    width: 373.918px;
+    height: 131px;
+    position: absolute;
+    top: 109px;
+    left: 180px;
+    color: #fff;
+    font-family: Oswald-Bold;
+    font-size: 43px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 55px;
+}
+
+#line_bb {
+    position: absolute;
+    left: 177px;
+    top: 270px;
+}
+
+#ep_text {
+    position: absolute;
+    left: 184px;
+    top: 311px;
+    width: 617.465px;
+    height: 89px;
+    color: #FFF;
+    font-family: Montserrat;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+#view_more1_bb {
+    position: absolute;
+    left: 177px;
+    top: 487px;
+    width: 227px;
+    height: 62px;
+    border: 2px solid #F7992B;
+}
+#vivew_more1_p_bb {
+    color: #F7992B;
+    text-align: center;
+    font-family: Oswald-Regular;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 5.95px;
+}
