@@ -1,0 +1,142 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Oswald-Bold;
+    src: url(oswald/Oswald-Bold.ttf);
+}
+@font-face {
+    font-family: Oswald-Regular;
+    src: url(oswald/Oswald-Regular.ttf);
+}
+@font-face {
+    font-family: Oswald-Light;
+    src: url(oswald/Oswald-Light.ttf);
+}
+
+
+.portfolio_block {
+    position: absolute;
+    left: 34px;
+    top: 3159px;
+    width: 1852px;
+    height: 1597px;
+}
+
+#small_words2 {
+    width: 63px;
+    height: 26px;
+    position: absolute;
+    left: 509px;
+    top: 0px;
+    color: #000;
+    text-align: center;
+    font-family: Oswald-Light;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}
+
+#big_words2 {
+    width: 317px;
+    height: 123px;
+    position: absolute;
+    top: 0px;
+    left: 512px;
+    color: #000;
+    font-family: Oswald-Bold;
+    font-size: 43px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 55px;
+}
+
+#line2 {
+    position: absolute;
+    left: 512px;
+    top: 164px;
+}
+
+#text_portfolio_block {
+    position: absolute;
+    top: 28px;
+    left: 838px;
+    width: 599px;
+    height: 121px;
+    color: #000;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 30.5px;
+}
+
+#portfolio_block_image_1 {
+    position: absolute;
+    left: 0px;
+    top: 214px;
+    width: 600px;
+    height: 616px;
+}
+
+#portfolio_block_image_2 {
+    position: absolute;
+    left: 626px;
+    top: 214px;
+    width: 600px;
+    height: 616px;
+}
+
+#portfolio_block_image_3 {
+    position: absolute;
+    left: 1252px;
+    top: 214px;
+    width: 600px;
+    height: 616px;
+}
+
+#portfolio_block_image_4 {
+    position: absolute;
+    left: 0px;
+    top: 854px;
+    width: 600px;
+    height: 616px;
+}
+
+#portfolio_block_image_5 {
+    position: absolute;
+    left: 626px;
+    top: 854px;
+    width: 600px;
+    height: 616px;
+}
+
+#portfolio_block_image_6 {
+    position: absolute;
+    left: 1252px;
+    top: 854px;
+    width: 600px;
+    height: 616px;
+}
+
+
+#view_more_portfolio {
+    position: absolute;
+    left: 812px;
+    top: 1535px;
+    width: 227px;
+    height: 62px;
+    border: 2px solid #F7992B;
+}
+#view_more_portfolio_p {
+    color: #F7992B;
+    text-align: center;
+    font-family: Oswald-Regular;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    letter-spacing: 5.95px;
+}
