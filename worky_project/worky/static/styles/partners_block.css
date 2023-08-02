@@ -1,0 +1,106 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Oswald-Bold;
+    src: url(oswald/Oswald-Bold.ttf);
+}
+@font-face {
+    font-family: Oswald-Regular;
+    src: url(oswald/Oswald-Regular.ttf);
+}
+@font-face {
+    font-family: Oswald-Light;
+    src: url(oswald/Oswald-Light.ttf);
+}
+
+
+.partners_block {
+    position: absolute;
+    left: 543px;
+    top: 4850px;
+    width: 912px;
+    height: 246px;
+}
+
+#small_words3 {
+    width: 63px;
+    height: 26px;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    color: #000;
+    text-align: center;
+    font-family: Oswald-Light;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}
+
+#big_words3 {
+    width: 317px;
+    height: 123px;
+    position: absolute;
+    top: 0px;
+    left: 3px;
+    color: #000;
+    font-family: Oswald-Bold;
+    font-size: 43px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 55px;
+}
+
+#line3 {
+    position: absolute;
+    left: 3px;
+    top: 164px;
+}
+
+#partner_1 {
+    width: 135px;
+    height: 102px;
+    position: absolute;
+    top: 26px;
+    left: 345px;
+}
+#partner_2 {
+    width: 144px;
+    height: 73px;
+    position: absolute;
+    top: 36px;
+    left: 544px;
+}
+#partner_3 {
+    width: 160px;
+    height: 76px;
+    position: absolute;
+    top: 39px;
+    left: 752px;
+}
+#partner_4 {
+    width: 139px;
+    height: 76px;
+    position: absolute;
+    top: 164px;
+    left: 345px;
+}
+#partner_5 {
+    width: 141px;
+    height: 82px;
+    position: absolute;
+    top: 158px;
+    left: 547px;
+}
+#partner_6 {
+    width: 124px;
+    height: 97px;
+    position: absolute;
+    top: 149px;
+    left: 770px;
+}
+
+
+
