@@ -7,8 +7,8 @@
     <link href="\static\styles\style_about_2.css" rel="stylesheet" type="text/css">
     <link href="\static\styles\yellow_and_black_blocks.css" rel="stylesheet" type="text/css">
     <link href="\static\styles\portfolio_block.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\get_con_block.css" rel="stylesheet" type="text/css">
     <link href="\static\styles\partners_block.css" rel="stylesheet" type="text/css">
-    <link href="\static\styles\get_contact_block.css" rel="stylesheet" type="text/css">
     <style>
       #view_more1 {
         position: absolute;
@@ -159,17 +159,16 @@
       <a href="https://twitter.com"><img src="\static\twitter.png" id="twitter"></a>
       <input placeholder="YOUR NAME" id="input_name">
       <input placeholder="YOUR EMAIL" id="input_email">
-      <textarea rows="4" cols="50" placeholder="YOUR MESSAGE"></textarea>
-      <a href="">
-        <div id="send_button">
-          <p id="send_text">SEND</p>
-        </div>
-      </a>
+      <textarea id="expandingTextarea" placeholder="YOUR MESSAGE"></textarea>
+      <div id="send_button">
+        <a href="" style="text-decoration: none;"><p id="send_text">SEND</p></a>
+      </div>
+      <div class="end_block">
+        <img class="logo_end_block" src="\static\logo.png">
+        <p id="end_block_text">© 2023 year</p>
+      </div>
     </div>
-    <div class="end_block">
-      <img class="logo" src="\static\logo.png">
-      <p id="end_text">© 2023 year</p>
-    </div>
+    <script src="\static\js\dist\index.bundle.js"></script>
     {% endblock %}
   </body>
 </html>

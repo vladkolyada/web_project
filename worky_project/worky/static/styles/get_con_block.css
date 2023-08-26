@@ -17,11 +17,41 @@
 
 
 .get_contact_block {
-    width: 856px;
-    height: 478px;
     position: absolute;
     left: 542px;
     top: 5300px;
+    margin: 0 auto; /* Центрування контейнера на сторінці */
+}
+
+.end_block {
+    margin-top: 50px;
+    margin-left: -542px;
+    width: 1920px;
+    height: 100px;
+    background: #3B3D42;
+}
+
+.logo_end_block {
+    position: absolute;
+    margin-left: 261px;
+    margin-top: 30px;
+    width: 197px;
+    height: 50px;
+}
+
+#end_block_text {
+  position: absolute;
+  margin-left: 480px;
+  margin-top: 45px;
+  width: 120px;
+  height: 26px;
+  color: #FFF;
+  text-align: center;
+  font-family: Oswald-Light;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
 
@@ -96,24 +126,6 @@
     top: 355px;
 }
 
-textarea {
-    width: 438px;
-    height: 163px;
-    resize: both; /* Здесь можно указать "horizontal", "vertical" или "both" */
-    overflow: auto; /* Добавляем полосы прокрутки, если текст не помещается */
-    min-height: 163px; /* Минимальная высота текстового поля */
-    max-width: 438px; /* Максимальная ширина текстового поля */
-    border-radius: 5px;
-    border: 1px solid #AFAFAF;
-    background: #FFF;
-    font-family: Montserrat;
-    padding: 5px; /* Добавляем отступы для улучшенного внешнего вида */
-    position: absolute;
-    left: 418px;
-    top: 204px;
-
-  }
-
 #input_name {
     width: 438px;
     height: 34px;
@@ -140,53 +152,40 @@ textarea {
     top: 122px;
 }
 
+#expandingTextarea {
+    width: 438px;
+    height: 200px;
+    min-height: 200px;
+    border-radius: 5px;
+    border: 1px solid #AFAFAF;
+    background: #FFF;
+    font-family: Montserrat;
+    padding: 5px;
+    resize: vertical;
+    margin-left: 418px;
+    margin-top: 200px;
+}
 
 #send_button {
-    position: absolute;
-    left: 418px;
-    top: 406px;
     width: 82px;
     height: 31px;
     border-radius: 4px;
     background: #F7992B;
+    margin-left: 418px;
+    margin-top: 15px;
+    display: flex; /* Додаємо flex контейнер для центрування */
+    align-items: center; /* Вертикально центруємо вміст */
+    justify-content: center; /* Горизонтально центруємо вміст */
 }
 
 #send_text {
-    width: 36.872px;
-    height: 14.795px;
     color: #FFF;
     font-family: Oswald-Regular;
-    font-size: 10px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 600;
-    line-height: normal;
+    line-height: 1; /* Встановлюємо 1, щоб уникнути відступів від верхнього/нижнього країв */
     letter-spacing: 3.5px;
-    position: absolute;
-    left: 26px;
-    top: -1px;
+    margin: 0; /* Видаляємо внутрішні відступи */
 }
 
-
-.end_block {
-    position: absolute;
-    top: 6000px;
-    left: 0px;
-    width: 1920px;
-    height: 100px;
-    background: #3B3D42;
-}
-
-#end_text {
-    position: absolute;
-    left: 480px;
-    top: 20px;
-    width: 120px;
-    height: 26px;
-    color: #FFF;
-    text-align: center;
-    font-family: Oswald-Light;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-}
