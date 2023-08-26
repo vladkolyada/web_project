@@ -128,15 +128,33 @@
     top: 1535px;
     width: 227px;
     height: 62px;
-    border: 2px solid #F7992B;
+    background: none;
+    text-decoration: none;
+    transition: box-shadow 0.3s ease, background 0.3s ease;
+    box-shadow: inset 0 0 0 2px #F7992B;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+#view_more_portfolio:hover {
+    background: #F7992B;
+    box-shadow: none;
+}
+
 #view_more_portfolio_p {
     color: #F7992B;
-    text-align: center;
     font-family: Oswald-Regular;
     font-size: 17px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     letter-spacing: 5.95px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin: 0;
+}
+
+#view_more_portfolio:hover #view_more_portfolio_p {
+    color: #FFF;
 }

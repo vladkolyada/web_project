@@ -128,6 +128,7 @@
     font-weight: 400;
     line-height: normal;
 }
+
 #view_more1 {
     position: absolute;
     left: 846px;
@@ -135,14 +136,32 @@
     width: 227px;
     height: 62px;
     background: #F7992B;
+    text-decoration: none;
+    transition: box-shadow 0.3s ease, background 0.3s ease; /* Додайте плавну анімацію для тіні */
+    box-shadow: inset 0 0 0 0 transparent; /* Початкове значення внутрішньої тіні */
+    display: flex; /* Додаємо flex контейнер для центрування вмісту */
+    align-items: center; /* Вертикально центруємо вміст */
+    justify-content: center; /* Горизонтально центруємо вміст */
 }
+
+#view_more1:hover {
+    background: none;
+    box-shadow: inset 0 0 0 2px #F7992B; /* Змінюємо внутрішню тінь */
+}
+
 #view_more1_p {
     color: #FFF;
-    text-align: center;
     font-family: Oswald-Regular;
     font-size: 17px;
     font-style: normal;
     font-weight: 600;
     line-height: normal;
     letter-spacing: 5.95px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin: 0; /* Видаляємо зовнішні відступи */
+}
+
+#view_more1:hover #view_more1_p {
+    color: #F7992B;
 }

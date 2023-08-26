@@ -15,6 +15,54 @@
     src: url(oswald/Oswald-Light.ttf);
 }
 
+@keyframes move_line1 {
+    0% {
+        left: 700px;
+        top: 250px;
+        opacity: 0;
+      }
+    50% {
+        opacity: 0.5;
+      }
+    100% {
+        left: 88px;
+        top: 250px;
+        opacity: 1;
+      }
+}
+
+@keyframes move_big_words1 {
+    0% {
+        left: -500px;
+        top: 26px;
+        opacity: 0;
+      }
+    50% {
+        opacity: 0.5;
+      }
+    100% {
+        top: 26px;
+        left: 88px;
+        opacity: 1;
+      }
+}
+
+@keyframes move_small_words1 {
+    0% {
+        left: 700px;
+        top: 20px;
+        opacity: 0;
+      }
+    50% {
+        opacity: 0.5;
+      }
+    100% {
+        top: 20px;
+        left: 90px;
+        opacity: 1;
+      }
+}
+
 
 
 .about_company_block {
@@ -27,8 +75,6 @@
 
 #small_words1 {
     position: absolute;
-    top: 20px;
-    left: 85px;
     color: #000;
     text-align: center;
     font-family: Oswald-Light;
@@ -36,6 +82,9 @@
     font-style: normal;
     font-weight: 200;
     line-height: normal;
+    animation-name: move_small_words1;
+    animation-duration: 2.3s;
+    animation-fill-mode: forwards;
 }
 
 #big_words1 {
@@ -50,12 +99,16 @@
     font-style: normal;
     font-weight: 500;
     line-height: 55px;
+    animation-name: move_big_words1;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
 #line1 {
     position: absolute;
-    left: 88px;
-    top: 250px;
+    animation-name: move_line1;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
 #text_about_company_block {
