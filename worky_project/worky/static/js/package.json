@@ -10,5 +10,8 @@
   },
   "scripts": {
     "build": "webpack --mode production"
+  },
+  "dependencies": {
+    "styled-components": "^6.0.7"
   }
 }
