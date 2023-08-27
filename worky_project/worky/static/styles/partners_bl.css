@@ -15,6 +15,53 @@
     src: url(oswald/Oswald-Light.ttf);
 }
 
+@keyframes move_line3 {
+    0% {
+        left: 503px;
+        top: 164px;
+        opacity: 0;
+      }
+    50% {
+        opacity: 0.5;
+      }
+    100% {
+        left: 3px;
+        top: 164px;
+        opacity: 1;
+      }
+    }
+
+@keyframes move_big_words3 {
+    0% {
+        top: 0px;
+        left: -503px;
+        opacity: 0;
+      }
+    50% {
+        opacity: 0.5;
+      }
+    100% {
+        top: 0px;
+        left: 3px;
+        opacity: 1;
+      }
+}
+
+@keyframes move_small_words3 {
+    0% {
+        left: 500px;
+        top: 0px;
+        opacity: 0;
+      }
+    50% {
+        opacity: 0.5;
+      }
+    100% {
+        left: 0px;
+        top: 0px;
+        opacity: 1;
+      }
+}
 
 .partners_block {
     position: absolute;
@@ -28,8 +75,9 @@
     width: 63px;
     height: 26px;
     position: absolute;
-    left: 0px;
-    top: 0px;
+    animation-name: move_small_words3;
+    animation-duration: 2.7s;
+    animation-fill-mode: forwards;
     color: #000;
     text-align: center;
     font-family: Oswald-Light;
@@ -43,8 +91,9 @@
     width: 317px;
     height: 123px;
     position: absolute;
-    top: 0px;
-    left: 3px;
+    animation-name: move_big_words3;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
     color: #000;
     font-family: Oswald-Bold;
     font-size: 43px;
@@ -55,8 +104,9 @@
 
 #line3 {
     position: absolute;
-    left: 3px;
-    top: 164px;
+    animation-name: move_line3;
+    animation-duration: 2.2s;
+    animation-fill-mode: forwards;
 }
 
 #partner_1 {

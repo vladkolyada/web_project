@@ -15,6 +15,53 @@
     src: url(oswald/Oswald-Light.ttf);
 }
 
+@keyframes move_line2 {
+    0% {
+        left: 1212px;
+        top: 164px;
+        opacity: 0;
+      }
+    50% {
+        opacity: 0.5;
+      }
+    100% {
+        left: 512px;
+        top: 164px;
+        opacity: 1;
+      }
+    }
+
+@keyframes move_big_words2 {
+    0% {
+        top: 0px;
+        left: -800px;
+        opacity: 0;
+      }
+    50% {
+        opacity: 0.5;
+      }
+    100% {
+        top: 0px;
+        left: 512px;
+        opacity: 1;
+      }
+}
+
+@keyframes move_small_words2 {
+    0% {
+        left: 1209px;
+        top: 0px;
+        opacity: 0;
+      }
+    50% {
+        opacity: 0.5;
+      }
+    100% {
+        left: 512px;
+        top: 0px;
+        opacity: 1;
+      }
+}
 
 .portfolio_block {
     position: absolute;
@@ -28,8 +75,9 @@
     width: 63px;
     height: 26px;
     position: absolute;
-    left: 509px;
-    top: 0px;
+    animation-name: move_small_words2;
+    animation-duration: 2.7s;
+    animation-fill-mode: forwards;
     color: #000;
     text-align: center;
     font-family: Oswald-Light;
@@ -43,8 +91,9 @@
     width: 317px;
     height: 123px;
     position: absolute;
-    top: 0px;
-    left: 512px;
+    animation-name: move_big_words2;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
     color: #000;
     font-family: Oswald-Bold;
     font-size: 43px;
@@ -55,8 +104,9 @@
 
 #line2 {
     position: absolute;
-    left: 512px;
-    top: 164px;
+    animation-name: move_line2;
+    animation-duration: 1.8s;
+    animation-fill-mode: forwards;
 }
 
 #text_portfolio_block {
@@ -130,7 +180,7 @@
     height: 62px;
     background: none;
     text-decoration: none;
-    transition: box-shadow 0.3s ease, background 0.3s ease;
+    transition: box-shadow 0.5s ease, background 0.5s ease;
     box-shadow: inset 0 0 0 2px #F7992B;
     display: flex;
     align-items: center;
@@ -151,7 +201,7 @@
     line-height: normal;
     letter-spacing: 5.95px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.5s ease;
     margin: 0;
 }
 

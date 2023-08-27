@@ -17,7 +17,7 @@
 
 @keyframes move_photo_1_about_block_arch {
     0% {
-        left: -300px;
+        left: -500px;
         top: 371px;
         opacity: 0;
       }
@@ -26,15 +26,49 @@
       }
     100% {
         left: 0px;
+        top: 371px;
         opacity: 1;
       }
 }
+
+@keyframes move_photo_2_about_block_engi {
+    0% {
+        left: 354px;
+        top: -500px;
+        opacity: 0;
+      }
+    50% {
+        opacity: 0.5;
+      }
+    100% {
+        left: 354px;
+        top: 371px;
+        opacity: 1;
+      }
+}
+
+@keyframes move_photo_3_about_block_inte {
+    0% {
+        left: 1208px;
+        top: 371px;
+        opacity: 0;
+      }
+    50% {
+        opacity: 0.5;
+      }
+    100% {
+        top: 371px;
+        left: 708px;
+        opacity: 1;
+      }
+}
+
 
 #photo_1_about_block_arch {
     width: 302px;
     height: 384px;
     position: absolute;
-    animation-name: move_small_words1;
+    animation-name: move_photo_1_about_block_arch;
     animation-duration: 2s;
     animation-fill-mode: forwards;
 }
@@ -44,33 +78,45 @@
     height: 384px;
 }
 
-#photo_2_about_block {
+#photo_2_about_block_engi {
     width: 302px;
     height: 384px;
     position: absolute;
-    top: 371px;
-    left: 354px;
+    animation-name: move_photo_2_about_block_engi;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+}
+
+#photo_2_about_block {
+    width: 302px;
+    height: 384px;
+}
+
+#photo_3_about_block_inte {
+    width: 302px;
+    height: 384px;
+    position: absolute;
+    animation-name: move_photo_3_about_block_inte;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
 }
 
 #photo_3_about_block {
     width: 302px;
     height: 384px;
-    position: absolute;
-    top: 371px;
-    left: 708px;
 }
 
 #link_arch {
     position: absolute;
     left: 89px;
-    top: 639px;
+    top: 266px;
     text-decoration: none;
     color: #FFF;
     font-family: Oswald-Regular;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    line-height: 30.5px; 
+    line-height: 30.5px;
     transition: color 0.3s ease;
 }
 #link_arch:hover {
@@ -79,15 +125,15 @@
 
 #link_engi {
     position: absolute;
-    left: 449px;
-    top: 639px;
+    left: 100px;
+    top: 266px;
     text-decoration: none;
     color: #FFF;
     font-family: Oswald-Regular;
     font-size: 20px;
     font-style: normal;
     font-weight: 700;
-    line-height: 30.5px; 
+    line-height: 30.5px;
     transition: color 0.3s ease;
 }
 #link_engi:hover {
@@ -96,8 +142,8 @@
 
 #link_inte {
     position: absolute;
-    left: 787px;
-    top: 639px;
+    left: 90px;
+    top: 266px;
     text-decoration: none;
     color: #FFF;
     font-family: Oswald-Regular;
@@ -105,7 +151,7 @@
     font-style: normal;
     font-weight: 700;
     line-height: 30.5px;
-    transition: color 0.3s ease; 
+    transition: color 0.3s ease;
 }
 #link_inte:hover {
     color: #F7992B;

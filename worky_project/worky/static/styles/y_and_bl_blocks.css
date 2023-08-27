@@ -15,6 +15,54 @@
     src: url(oswald/Oswald-Light.ttf);
 }
 
+@keyframes move_small_words_bb {
+    0% {
+        top: 100px;
+        left: 682px;
+        opacity: 0;
+      }
+    50% {
+        opacity: 0.5;
+      }
+    100% {
+        top: 100px;
+        left: 182px;
+        opacity: 1;
+      }
+}
+
+@keyframes move_big_words_bb {
+    0% {
+        top: 109px;
+        left: -680px;
+        opacity: 0;
+      }
+    50% {
+        opacity: 0.5;
+      }
+    100% {
+        top: 109px;
+        left: 177px;
+        opacity: 1;
+      }
+}
+
+@keyframes move_line_bb {
+    0% {
+        left: 650px;
+        top: 283px;
+        opacity: 0;
+      }
+    50% {
+        opacity: 0.5;
+      }
+    100% {
+        left: 177px;
+        top: 283px;
+        opacity: 1;
+      }
+}
+
 .yellow_block {
     position: absolute;
     left: 975px;
@@ -101,8 +149,9 @@
 
 #small_words_bb {
     position: absolute;
-    top: 100px;
-    left: 182px;
+    animation-name: move_small_words_bb;
+    animation-duration: 1.5s;
+    animation-fill-mode: forwards;
     color: #fff;
     text-align: center;
     font-family: Oswald-Light;
@@ -116,8 +165,9 @@
     width: 373.918px;
     height: 131px;
     position: absolute;
-    top: 109px;
-    left: 180px;
+    animation-name: move_big_words_bb;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
     color: #fff;
     font-family: Oswald-Bold;
     font-size: 43px;
@@ -128,8 +178,9 @@
 
 #line_bb {
     position: absolute;
-    left: 177px;
-    top: 270px;
+    animation-name: move_line_bb;
+    animation-duration: 2.2s;
+    animation-fill-mode: forwards;
 }
 
 #ep_text {
@@ -154,7 +205,7 @@
     height: 62px;
     background: none;
     text-decoration: none;
-    transition: box-shadow 0.3s ease, background 0.3s ease; /* Додайте плавну анімацію для тіні */
+    transition: box-shadow 0.5s ease, background 0.5s ease; /* Додайте плавну анімацію для тіні */
     box-shadow: inset 0 0 0 2px #F7992B; /* Початкове значення внутрішньої тіні */
     display: flex; /* Додаємо flex контейнер для центрування вмісту */
     align-items: center; /* Вертикально центруємо вміст */
@@ -175,7 +226,7 @@
     line-height: normal;
     letter-spacing: 5.95px;
     text-decoration: none;
-    transition: color 0.3s ease;
+    transition: color 0.5s ease;
     margin: 0; /* Видаляємо зовнішні відступи */
 }
 
