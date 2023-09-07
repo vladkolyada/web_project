@@ -12,6 +12,7 @@
     "build": "webpack --mode production"
   },
   "dependencies": {
+    "react-spring": "^9.7.2",
     "styled-components": "^6.0.7"
   }
 }

@@ -1,3 +1,4 @@
+{% load widget_tweaks %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -5,7 +6,7 @@
     <link href="\static\styles\sty.css" rel="stylesheet" type="text/css">
     <link href="\static\styles\y_and_bl_blocks.css" rel="stylesheet" type="text/css">
     <link href="\static\styles\portfolio_blo.css" rel="stylesheet" type="text/css">
-    <link href="\static\styles\get_cont_block.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\get_conta_block.css" rel="stylesheet" type="text/css">
     <link href="\static\styles\partners_bl.css" rel="stylesheet" type="text/css">
     <link href="\static\styles\st_about.css" rel="stylesheet" type="text/css">
     <link href="\static\styles\sty_about2.css" rel="stylesheet" type="text/css">
@@ -149,6 +150,7 @@
       <img src="\static\partner_5.png" id="partner_5">
       <img src="\static\partner_6.png" id="partner_6">
     </div>
+    {% endblock %}
     <div class="get_contact_block">
       <p id="small_words4">LET’S GET IN TOUCH</p>
       <p id="big_words4">CONTACT DETAILS</p>
@@ -166,18 +168,18 @@
       <a href="https://facebook.com"><img src="\static\facebook.png" id="facebook"></a>
       <a href="https://youtube.com"><img src="\static\youtube.png" id="youtube"></a>
       <a href="https://twitter.com"><img src="\static\twitter.png" id="twitter"></a>
-      <input placeholder="YOUR NAME" id="input_name">
-      <input placeholder="YOUR EMAIL" id="input_email">
-      <textarea id="expandingTextarea" placeholder="YOUR MESSAGE"></textarea>
-      <div id="send_button">
-        <a href="" style="text-decoration: none;"><p id="send_text">SEND</p></a>
-      </div>
+      <form action="{% url 'index' %}" method="post">
+        {% csrf_token %}
+        {% render_field form.name placeholder="YOUR NAME" id+="input_name"%}
+        {% render_field form.email placeholder="YOUR EMAIL" id+="input_email"%}
+        {% render_field form.message placeholder="YOUR MESSAGE" id+="expandingTextarea"%}
+        <button type="submit" id="send_button"><span>SEND</span></button>
+      </form>
       <div class="end_block">
         <img class="logo_end_block" src="\static\logo.png">
         <p id="end_block_text">© 2023 year</p>
       </div>
     </div>
     <script src="\static\js\dist\ind.bundle.js"></script>
-    {% endblock %}
   </body>
 </html>
