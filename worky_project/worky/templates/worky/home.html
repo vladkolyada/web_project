@@ -2,8 +2,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Home</title>
-    <link href="\static\styles\sty.css" rel="stylesheet" type="text/css">
+    <title>{% block title %}Home{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="\static\styles\styl.css" rel="stylesheet" type="text/css">
     <link href="\static\styles\y_and_bl_blocks.css" rel="stylesheet" type="text/css">
     <link href="\static\styles\portfolio_blo.css" rel="stylesheet" type="text/css">
     <link href="\static\styles\get_conta_block.css" rel="stylesheet" type="text/css">
@@ -29,6 +31,13 @@
           line-height: normal;
           letter-spacing: 5.95px;
       }
+
+      .get_contact_block {
+          position: absolute;
+          left: 542px;
+          top: 5300px;
+          margin: 0 auto;
+      }
     </style>
   </head>
   <body>
@@ -39,13 +48,32 @@
         </a>  
       </div>
       <div>
-        <a href="" id="head_text"> HOME </a>
-        <a href="" id="head_text1"> ABOUT </a>
-        <a href="" id="head_text2"> SERVICES </a>
-        <a href="" id="head_text3"> BLOG </a>
+        {% if home == True %}
+          <a href="/worky" id="head_text"> HOME </a>
+        {% else %}
+          <a href="/worky" id="head_text_"> HOME </a>
+        {% endif %}
+
+        {% if about == True %}
+          <a href="about" id="head_text1"> ABOUT </a>
+        {% else %}
+          <a href="about" id="head_text1_"> ABOUT </a>
+        {% endif %}
+
+        {% if services == True %}
+          <a href="" id="head_text2"> SERVICES </a>
+        {% else %}
+          <a href="" id="head_text2_"> SERVICES </a>
+        {% endif %}
+
+        {% if blog == True %}
+          <a href="" id="head_text3"> BLOG </a>
+        {% else %}
+          <a href="" id="head_text3_"> BLOG </a>
+        {% endif %}
       </div>
     </div>
-    {% block body %}
+    {% block content %}
     <div class="start_block">
       <img src="\static\start_img.png" style="width: 1920px; height: 1288px;">
       <p id="start_title">WE BUILD THE FUTURE</p>
@@ -168,7 +196,7 @@
       <a href="https://facebook.com"><img src="\static\facebook.png" id="facebook"></a>
       <a href="https://youtube.com"><img src="\static\youtube.png" id="youtube"></a>
       <a href="https://twitter.com"><img src="\static\twitter.png" id="twitter"></a>
-      <form action="{% url 'index' %}" method="post">
+      <form action="{% url 'home' %}" method="post">
         {% csrf_token %}
         {% render_field form.name placeholder="YOUR NAME" id+="input_name"%}
         {% render_field form.email placeholder="YOUR EMAIL" id+="input_email"%}

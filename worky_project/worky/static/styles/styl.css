@@ -45,7 +45,38 @@
     line-height: normal;
     text-decoration: none;
 }
+#head_text_ {
+    position: absolute;
+    left: 1307px;
+    top: 37px;
+    color: #FFFFFF;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+#head_text_:hover {
+    color: #F7992B;
+}
+
 #head_text1 {
+    position: absolute;
+    left: 1394px;
+    top: 37px;
+    color: #F7992B;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+}
+#head_text1_ {
     position: absolute;
     left: 1394px;
     top: 37px;
@@ -59,10 +90,24 @@
     text-decoration: none;
     transition: color 0.3s ease;
 }
-#head_text1:hover {
+#head_text1_:hover {
     color: #F7992B;
 }
+
 #head_text2 {
+    position: absolute;
+    left: 1481px;
+    top: 37px;
+    color: #F7992B;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+}
+#head_text2_ {
     position: absolute;
     left: 1481px;
     top: 37px;
@@ -76,10 +121,24 @@
     text-decoration: none;
     transition: color 0.3s ease;
 }
-#head_text2:hover {
+#head_text2_:hover {
     color: #F7992B;
 }
+
 #head_text3 {
+    position: absolute;
+    left: 1589px;
+    top: 37px;
+    color: #F7992B;
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-decoration: none;
+}
+#head_text3_ {
     position: absolute;
     left: 1589px;
     top: 37px;
@@ -93,7 +152,7 @@
     text-decoration: none;
     transition: color 0.3s ease;
 }
-#head_text3:hover {
+#head_text3_:hover {
     color: #F7992B;
 }
 

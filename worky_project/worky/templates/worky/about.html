@@ -1,5 +1,63 @@
-{% extends "index.html" %}
+{% extends "worky/home.html" %}
 
-{% block body %}
+{% block title %}About{% endblock %}
+
+{% block content %}
+  <link href="\static\styles\page_about\style.css" rel="stylesheet" type="text/css">
+  <link href="\static\styles\page_about\style_bb_and_yb.css" rel="stylesheet" type="text/css">
+  <style>
+    .get_contact_block {
+        position: absolute;
+        left: 542px;
+        top: 2700px;
+        margin: 0 auto; /* Центрування контейнера на сторінці */
+    }
+  </style>
+  <div class="about_company_block1">
+    <p id="small_words11">ABOUT COMPANY</p>
+    <p id="big_words11">WE CREATE<br>
+      AND TURN INTO 
+      REALITY</p>
+    <svg width="85" height="5" viewBox="0 0 85 5" fill="none" xmlns="http://www.w3.org/2000/svg" id="line11">
+      <line y1="2.30121" x2="85" y2="2.30121" stroke="#F7992B" stroke-width="4"/>
+    </svg>
+    <img src="\static\about_page.png" id="about_page_img" style="width: 600px; height: 400px; 
+    position: absolute; left: 472px; top: 70px;">
+    <p id="text_about_company_block1"><b>We apply innovative design solutions to enhance people’s 
+      residential wellbeing and
+      to help workplaces succeed! All our team collaborates with our clients!</b></p>
+    <p id="text_about_company_block11">All our team collaborates with our clients, across all of our 3 offices, 
+      which are located throughout the US. Our mission is to implement the outstanding 
+      design ideas and solutions for any project we’re working on… During that process 
+      we carefully combine client’s guidelines, technical possibilities, as well as the 
+      environmental issues. Engineering and interior design solutions that we deliver 
+      are usually born after a collaborative process.</p>
+  </div>
+  <div id="black_block_about">
+    <p id="small_words_bb1">SERVICES</p>
+    <p id="big_words_bb1">OUR PHILOSOPHY</p>
+    <svg width="85" height="5" viewBox="0 0 85 5" fill="none" xmlns="http://www.w3.org/2000/svg" id="line_bb1">
+      <line y1="2.30121" x2="85" y2="2.30121" stroke="#F7992B" stroke-width="4"/>
+    </svg>
+  </div>
+  <div id="yellow_block_about">
+    <img src="\static\yb_about.png" id="yb_about_img" style="width: 813px; height: 765px; opacity: 0.3;">
+    <p id="small_words_yb1">IMPORTANT MILESTONES</p>
+    <p id="big_words_yb1">WHAT WE <br>ACCOMPLISHED</p>
+    <svg width="85" height="5" viewBox="0 0 85 5" fill="none" xmlns="http://www.w3.org/2000/svg" id="line_yb1">
+      <line y1="2.30121" x2="85" y2="2.30121" stroke="#FFFFFF" stroke-width="4"/>
+    </svg>
+    <p id="counter1">0</p>
+    <p id="finishedProjects_title">FINISHED PROJECTS</p>
+    <p id="counter2">0</p>
+    <p id="designAwards_title">DESIGN AWARDS</p>
+    <p id="counter3">0</p>
+    <p id="yearsInindustry_title">YEARS IN INDUSTRY</p>
+    <p id="counter4">0</p>
+    <p id="happyClients_title">HAPPY CLIENTS</p>
+  </div>
+
+  <script src="\static\js\src\about_script.js"></script>
+
 
 {% endblock %}

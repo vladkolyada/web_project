@@ -63,13 +63,6 @@
       }
 }
 
-.get_contact_block {
-    position: absolute;
-    left: 542px;
-    top: 5300px;
-    margin: 0 auto; /* Центрування контейнера на сторінці */
-}
-
 .end_block {
     margin-top: 50px;
     margin-left: -542px;

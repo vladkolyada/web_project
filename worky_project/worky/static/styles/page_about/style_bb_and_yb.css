@@ -1,0 +1,221 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(/static/styles/montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Oswald-Bold;
+    src: url(/static/styles/oswald/Oswald-Bold.ttf);
+}
+@font-face {
+    font-family: Oswald-Regular;
+    src: url(/static/styles/oswald/Oswald-Regular.ttf);
+}
+@font-face {
+    font-family: Oswald-Light;
+    src: url(/static/styles/oswald/Oswald-Light.ttf);
+}
+
+#black_block_about {
+    position: absolute;
+    top: 962px;
+    left: 0px;
+    width: 1107px;
+    height: 765px;
+    background-color: black;
+}
+
+#small_words_bb1 {
+    position: absolute;
+    top: 103px;
+    left: 382px;
+    color: #FFF;
+    text-align: center;
+    font-family: Oswald-Light;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}
+
+#big_words_bb1 {
+    width: 317px;
+    height: 211.301px;
+    position: absolute;
+    top: 103px;
+    left: 382px;
+    color: #FFF;
+    font-family: Oswald-Bold;
+    font-size: 43px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 55px;
+}
+
+#line_bb1 {
+    position: absolute;
+    left: 382px;
+    top: 216px;
+}
+
+
+#yellow_block_about {
+    position: absolute;
+    top: 962px;
+    left: 1107px;
+    width: 813.001px;
+    height: 765px;
+    background-color: #F7992B;
+}
+
+#small_words_yb1 {
+    position: absolute;
+    top: 103px;
+    left: 172px;
+    color: #FFF;
+    text-align: center;
+    font-family: Oswald-Light;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}
+
+#big_words_yb1 {
+    width: 317px;
+    height: 211.301px;
+    position: absolute;
+    top: 103px;
+    left: 172px;
+    color: #FFF;
+    font-family: Oswald-Bold;
+    font-size: 43px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 55px;
+}
+
+#line_yb1 {
+    position: absolute;
+    left: 172px;
+    top: 270px;
+}
+
+
+#counter1 {
+    width: 69px;
+    height: 59px;
+    position: absolute;
+    top: 330px;
+    left: 217px;
+    color: #FFF;
+    font-family: Oswald-Bold;
+    font-size: 43px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 55px;
+}
+
+#finishedProjects_title {
+    width: 200px;
+    height: 18px;
+    position: absolute;
+    top: 418px;
+    left: 151px;
+    color: #FFF;
+    text-align: center;
+    font-family: Oswald-Light;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}
+
+#counter2 {
+    width: 69px;
+    height: 59px;
+    position: absolute;
+    top: 330px;
+    left: 384px;
+    color: #FFF;
+    font-family: Oswald-Bold;
+    font-size: 43px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 55px;
+}
+
+#designAwards_title {
+    width: 94px;
+    height: 18px;
+    position: absolute;
+    top: 418px;
+    left: 362px;
+    color: #FFF;
+    text-align: center;
+    font-family: Oswald-Light;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}
+
+#counter3 {
+    width: 69px;
+    height: 59px;
+    position: absolute;
+    top: 500px;
+    left: 225px;
+    color: #FFF;
+    font-family: Oswald-Bold;
+    font-size: 43px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 55px;
+}
+
+#yearsInindustry_title {
+    width: 200px;
+    height: 18px;
+    position: absolute;
+    top: 590px;
+    left: 151px;
+    color: #FFF;
+    text-align: center;
+    font-family: Oswald-Light;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}
+
+#counter4 {
+    width: 69px;
+    height: 59px;
+    position: absolute;
+    top: 500px;
+    left: 375px;
+    color: #FFF;
+    font-family: Oswald-Bold;
+    font-size: 43px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 55px;
+}
+
+#happyClients_title {
+    width: 94px;
+    height: 18px;
+    position: absolute;
+    top: 590px;
+    left: 362px;
+    color: #FFF;
+    text-align: center;
+    font-family: Oswald-Light;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}
+
+
+
