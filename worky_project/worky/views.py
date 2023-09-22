@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.http import Http404, HttpResponse
 from .models import Client, Message, FeedBack
 from .forms import GetContactForm
 
@@ -26,6 +27,9 @@ def home(request):
         "services": False,
         "blog": False,
     })
+
+
+texts_for_about_page = ["", "", ""]
 
 
 def about(request):

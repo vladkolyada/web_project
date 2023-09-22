@@ -218,4 +218,17 @@
 }
 
 
+#our_mission_plus {
+    position: absolute;
+    left: 389px;
+    top: 307px;
+}
+
+#our_mission_minus {
+    position: absolute;
+    left: 389px;
+    top: 312px;
+}
+
+
 

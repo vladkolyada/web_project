@@ -1,6 +1,5 @@
+import datetime
 from django.db import models
-
-# Create your models here.
 
 
 class Client(models.Model):
@@ -16,9 +15,10 @@ class Message(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name="client_message",
                                default=None, null=False)
     message = models.CharField(max_length=15000)
+    time = models.DateTimeField(default=f"{datetime.datetime.now()}")
 
     def __str__(self):
-        return (f"{self.client} message:\n"
+        return (f"{self.client} message({self.time}):\n"
                 f"{self.message}")
 
 
@@ -26,8 +26,9 @@ class FeedBack(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name="client_feedback",
                                default=None, null=False)
     feedback = models.CharField(max_length=3000)
+    time = models.DateTimeField(default=f"{datetime.datetime.now()}")
 
     def __str__(self):
-        return f"{self.client} feedback:\n" \
+        return f"{self.client} feedback({self.time}):\n" \
                f"{self.feedback}"
 
