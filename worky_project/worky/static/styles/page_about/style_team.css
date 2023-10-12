@@ -1,0 +1,158 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(/static/styles/montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Oswald-Bold;
+    src: url(/static/styles/oswald/Oswald-Bold.ttf);
+}
+@font-face {
+    font-family: Oswald-Regular;
+    src: url(/static/styles/oswald/Oswald-Regular.ttf);
+}
+@font-face {
+    font-family: Oswald-Light;
+    src: url(/static/styles/oswald/Oswald-Light.ttf);
+}
+
+
+#team_block {
+    width: 1302px;
+    height: 790px;
+    position: absolute;
+    top: 1800px;
+    left: 310px;
+}
+
+#small_words_team {
+    position: absolute;
+    left: 221px;
+    color: #000;
+    text-align: center;
+    font-family: Oswald-Light;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 200;
+    line-height: normal;
+}
+
+#big_words_team {
+    width: 317px;
+    height: 137px;
+    position: absolute;
+    left: 219px;
+    top: 5px;
+    color: #000;
+    font-family: Oswald-Bold;
+    font-size: 43px;
+    line-height: 55px;
+}
+
+#line_team {
+    position: absolute;
+    left: 225px;
+    top: 175px;
+}
+
+#text_team {
+    width: 643px;
+    height: 84px;
+    position: absolute;
+    left: 550px;
+    top: 41px;
+    font-family: Montserrat;
+    font-size: 15px;
+    color: #000;
+}
+
+
+#team_first_person_image {
+    width: 370px;
+    height: 458px;
+    position: absolute;
+    top: 210px;
+    left: 0px;
+}
+#title_of_first_person{
+    width: 250px;
+    height: 31px;
+    position: absolute;
+    left: 73px;
+    top: 670px;
+    color: #000;
+    font-family: Oswald-Bold;
+    font-size: 33px;
+    line-height: 55px;
+}
+#second_title_of_first_person{
+    width: 250px;
+    height: 31px;
+    position: absolute;
+    left: 135px;
+    top: 715px;
+    color: #000;
+    font-family: Oswald-Light;
+    font-size: 28px;
+    line-height: 55px;
+}
+
+#team_second_person_image {
+    width: 370px;
+    height: 458px;
+    position: absolute;
+    top: 210px;
+    left: 466px;
+}
+#title_of_second_person{
+    width: 250px;
+    height: 31px;
+    position: absolute;
+    left: 582px;
+    top: 670px;
+    color: #000;
+    font-family: Oswald-Bold;
+    font-size: 33px;
+    line-height: 55px;
+}
+#second_title_of_second_person{
+    width: 250px;
+    height: 31px;
+    position: absolute;
+    left: 560px;
+    top: 715px;
+    color: #000;
+    font-family: Oswald-Light;
+    font-size: 28px;
+    line-height: 55px;
+}
+
+#team_third_person_image {
+    width: 370px;
+    height: 458px;
+    position: absolute;
+    top: 210px;
+    left: 932px;
+}
+#title_of_third_person{
+    width: 250px;
+    height: 31px;
+    position: absolute;
+    left: 1020px;
+    top: 670px;
+    color: #000;
+    font-family: Oswald-Bold;
+    font-size: 33px;
+    line-height: 55px;
+}
+#second_title_of_third_person{
+    width: 250px;
+    height: 31px;
+    position: absolute;
+    left: 1065px;
+    top: 715px;
+    color: #000;
+    font-family: Oswald-Light;
+    font-size: 28px;
+    line-height: 55px;
+}
+
