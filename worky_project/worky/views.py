@@ -29,9 +29,6 @@ def home(request):
     })
 
 
-texts_for_about_page = ["", "", ""]
-
-
 def about(request):
     form = GetContactForm(request.POST)
 
@@ -53,4 +50,51 @@ def about(request):
         "services": False,
         "blog": False,
     })
+
+
+def services(request):
+    form = GetContactForm(request.POST)
+
+    if request.method == "POST":
+        if form.is_valid():
+            name = form.cleaned_data["name"]
+            email = form.cleaned_data["email"]
+            message = form.cleaned_data["message"]
+
+            client = Client(name=name, email=email)
+            client.save()
+
+            client_message = Message(client=client, message=message)
+            client_message.save()
+    return render(request, "worky/services.html", {
+        "form": form,
+        "home": False,
+        "about": False,
+        "services": True,
+        "blog": False,
+    })
+
+
+def blog(request):
+    form = GetContactForm()
+
+    if request.method == "POST":
+        if form.is_valid():
+            name = form.cleaned_data["name"]
+            email = form.cleaned_data["email"]
+            message = form.cleaned_data["message"]
+
+            client = Client(name=name, email=email)
+            client.save()
+
+            client_message = Message(client=client, message=message)
+            client_message.save()
+    return render(request, "worky/blog.html", {
+        "form": form,
+        "home": False,
+        "about": False,
+        "services": False,
+        "blog": True,
+    })
+
 

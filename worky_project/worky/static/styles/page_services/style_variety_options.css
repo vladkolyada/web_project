@@ -1,0 +1,25 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(/static/styles/montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Oswald-Bold;
+    src: url(/static/styles/oswald/Oswald-Bold.ttf);
+}
+@font-face {
+    font-family: Oswald-Regular;
+    src: url(/static/styles/oswald/Oswald-Regular.ttf);
+}
+@font-face {
+    font-family: Oswald-Light;
+    src: url(/static/styles/oswald/Oswald-Light.ttf);
+}
+
+#variety_of_options_block {
+    position: absolute;
+    top: 1220px;
+    left: 0px;
+    width: 1920px;
+    height: 1190px;
+    background-color: black;
+}

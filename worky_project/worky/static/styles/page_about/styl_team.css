@@ -72,6 +72,11 @@
     position: absolute;
     top: 210px;
     left: 0px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+#team_first_person_image:hover {
+    opacity: 0.7;
 }
 #title_of_first_person{
     width: 250px;
@@ -102,6 +107,11 @@
     position: absolute;
     top: 210px;
     left: 466px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+#team_second_person_image:hover {
+    opacity: 0.7;
 }
 #title_of_second_person{
     width: 250px;
@@ -132,6 +142,11 @@
     position: absolute;
     top: 210px;
     left: 932px;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+#team_third_person_image:hover {
+    opacity: 0.7;
 }
 #title_of_third_person{
     width: 250px;
