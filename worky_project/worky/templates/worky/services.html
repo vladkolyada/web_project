@@ -3,8 +3,8 @@
 {% block title %}Services{% endblock %}
 
 {% block content %}
-    <link href="\static\styles\page_services\style_best_services.css" rel="stylesheet" type="text/css">
-    <link href="\static\styles\page_services\style_variety_options.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\page_services\st_best_services.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\page_services\st_variety_options.css" rel="stylesheet" type="text/css">
     <style>
         .get_contact_block {
             position: absolute;
@@ -72,11 +72,54 @@
             </p>
         </div> 
     </div>
-    <div id="variety_of_options_block">
-        <p id="small_words_our_services">OUR SERVICES</p>
-        <p id="big_words_our_services">LOOK OUR BEST SERVICES</p>
-        <svg width="128" height="5" viewBox="0 0 128 5" fill="none" xmlns="http://www.w3.org/2000/svg" id="line_our_services">
+    <div class="variety_of_options_block">
+        <p id="small_words_our_pricing">OUR PRICING</p>
+        <p id="big_words_our_pricing">A VARIETY OF OPTIONS</p>
+        <svg width="128" height="5" viewBox="0 0 128 5" fill="none" xmlns="http://www.w3.org/2000/svg" id="line_our_pricing">
             <line y1="2.30121" x2="128" y2="2.30121" stroke="#F7992B" stroke-width="4"/>
         </svg>
+        <p id="text_our_pricing">
+            Transform your everyday environment with these 3 different sets of architecture services offered at affordable price. 
+            Every pricing package can be customized according to your wishes.
+        </p>
+        <div id="about_price_basic">
+            <p id="title_price" style="left: 157px;">BASIC</p>
+            <p id="price">$29.00</p>
+            <p id="list">Interior Design<br>
+                Space Planning<br>
+                Decorating Service<br>
+                Project Management</p>
+            <a href="about" style="text-decoration: none;">
+                <div id="view_more_price">
+                    <p id="text_view_more_price">VIEW MORE</p>
+                </div>
+            </a>
+        </div>
+        <div id="about_price_standard">
+            <p id="title_price" style="color: white">STANDARD</p>
+            <p id="price" style="color: white">$49.00</p>
+            <p id="list" style="color: white">Interior Architecture<br>
+                Exterior Design<br>
+                Renovation Service<br>
+                Lighting Installation</p>
+            <a href="about" style="text-decoration: none;">
+                <div id="view_more_price_standard">
+                    <p id="text_view_more_price_standard">VIEW MORE</p>
+                </div>
+            </a>
+        </div>
+        <div id="about_price_premium">
+            <p id="title_price">PREMIUM</p>
+            <p id="price">$79.00</p>
+            <p id="list">Landscape Design<br>
+                Planning & Development<br>
+                Custom Furniture<br>
+                Refurbishing</p>
+            <a href="about" style="text-decoration: none;">
+                <div id="view_more_price">
+                    <p id="text_view_more_price">VIEW MORE</p>
+                </div>
+            </a>
+        </div>
     </div>
 {% endblock %}
