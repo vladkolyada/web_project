@@ -5,10 +5,10 @@
     <title>{% block title %}Home{% endblock %}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="\static\styles\styl.css" rel="stylesheet" type="text/css">
-    <link href="\static\styles\y_and_bl_blocks.css" rel="stylesheet" type="text/css">
-    <link href="\static\styles\portfolio_blo.css" rel="stylesheet" type="text/css">
-    <link href="\static\styles\get_conta_block.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\style.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\y_and_b_blocks.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\portfolio_block.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\get_contact_block.css" rel="stylesheet" type="text/css">
     <link href="\static\styles\partners_bl.css" rel="stylesheet" type="text/css">
     <link href="\static\styles\st_about.css" rel="stylesheet" type="text/css">
     <link href="\static\styles\sty_about2.css" rel="stylesheet" type="text/css">
@@ -34,6 +34,8 @@
 
       .get_contact_block {
           position: absolute;
+          width: 870px;
+          height: 480px;
           left: 542px;
           top: 5300px;
           margin: 0 auto;
@@ -43,7 +45,7 @@
   <body>
     <div class="head_block" >
       <div>
-        <a href="">
+        <a href="/worky">
           <img class="logo" src="\static\logo.png">
         </a>  
       </div>
@@ -75,7 +77,7 @@
     </div>
     {% block content %}
     <div class="start_block">
-      <img src="\static\start_img.png" style="width: 1920px; height: 1288px;">
+      <img src="\static\start_img.png" style="width: 1903px; height: 1288px;">
       <p id="start_title">WE BUILD THE FUTURE</p>
       <p id="start_title1">Best Ideas – Best Solution – Best Result</p>
       <a href="about"><div id="view_more1"><p id="view_more1_p">VIEW MORE</p></div></a>
@@ -208,6 +210,6 @@
         <p id="end_block_text">© 2023 year</p>
       </div>
     </div>
-    <script src="\static\js\dist\ind.bundle.js"></script>
+    <script src="\static\js\src\ind.js"></script>
   </body>
 </html>

@@ -1,0 +1,101 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Oswald-Bold;
+    src: url(oswald/Oswald-Bold.ttf);
+}
+@font-face {
+    font-family: Oswald-Regular;
+    src: url(oswald/Oswald-Regular.ttf);
+}
+@font-face {
+    font-family: Oswald-Light;
+    src: url(oswald/Oswald-Light.ttf);
+}
+
+
+.log_in_admin_block {
+    position: absolute;
+    left: 660px;
+    top: 240px;
+    width: 1000px;
+    height: 700px;
+}
+
+#log_in_title {
+    width: 350px;
+    height: 50px;
+    position: absolute;
+    left: 120px;
+    top: 0px;
+    color: #000;
+    font-family: Oswald-Bold;
+    font-size: 43px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 55px;
+}
+
+#line_log_in_admin  {
+    position: absolute;
+    left: 240px;
+    top: 100px;
+}
+
+#input_admin_username {
+    width: 438px;
+    height: 34px;
+    border-radius: 5px;
+    border: 1px solid #AFAFAF;
+    background: #FFF;
+    font-family: Montserrat;
+    padding: 5px;
+    position: absolute;
+    left: 60px;
+    top: 160px;
+}
+
+#input_admin_password {
+    width: 438px;
+    height: 34px;
+    border-radius: 5px;
+    border: 1px solid #AFAFAF;
+    background: #FFF;
+    font-family: Montserrat;
+    padding: 5px;
+    position: absolute;
+    left: 60px;
+    top: 230px;
+}
+
+#send_button_admin {
+    width: 82px;
+    height: 31px;
+    border-radius: 4px;
+    background: #F7992B;
+    margin-left: 243px;
+    margin-top: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#send_button_admin:hover {
+    background: #ffac4e;
+}
+
+#send_button_admin span {
+    color: #FFF;
+    font-family: Oswald-Regular;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 3.5px;
+    margin: 0;
+}

@@ -1,0 +1,19 @@
+{% extends "worky/base_page_without_contact_details.html" %}
+
+{% block title %}Log in for admins{% endblock %}
+
+{% block content %}
+    <link href="\static\styles\admin_pages_style\style_log_in_admin.css" rel="stylesheet" type="text/css">
+    <div class="log_in_admin_block">
+        <h1 id="log_in_title">LOG IN FOR ADMINS</h1>
+        <svg width="85" height="5" viewBox="0 0 85 5" fill="none" xmlns="http://www.w3.org/2000/svg" id="line_log_in_admin">
+            <line y1="2.30121" x2="85" y2="2.30121" stroke="#F7992B" stroke-width="4"/>
+        </svg>
+        <form action="{% url 'log_in_admin' %}" method="post">
+            {% csrf_token %}
+            <input type="text" name="username" id="input_admin_username" placeholder="YOUR ADMIN USERNAME">
+            <input type="password" name="password" id="input_admin_password" placeholder="YOUR ADMIN PASSWORD">
+            <button type="submit" id="send_button_admin" value="Login"><span>SEND</span></button>
+        </form>
+    </div>
+{% endblock %}

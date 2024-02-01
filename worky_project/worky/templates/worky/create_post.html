@@ -1,0 +1,22 @@
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="\static\styles\admin_pages_style\st_create_post.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<h1 style="position: absolute; top: 150px; left: 500px">{{ request.user.username }} {{ request.user.id }}</h1>
+
+<div class="create_post_block">
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% render_field form.title placeholder="YOUR TITLE" id="input_title" name="post_title" %}
+        {% render_field form.image id="input_image" name="post_image" %}
+        {% render_field form.text placeholder="YOUR TEXT" id="input_text" name="post_text" %}
+        <button type="submit" id="create_post_button"><span>CREATE</span></button>
+    </form>
+</div>
+</body>
+</html>

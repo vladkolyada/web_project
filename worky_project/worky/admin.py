@@ -7,5 +7,6 @@ from .models import *
 
 admin.site.register(Client)
 admin.site.register(Message)
-admin.site.register(FeedBack)
-
+admin.site.register(Newsletter)
+admin.site.register(Admin)
+admin.site.register(Posts)

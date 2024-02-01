@@ -98,13 +98,13 @@ activateAnimationOnBlock(smallWordsBb, topPositionBlackBlock);
 activateAnimationOnBlock(bigWordsBb, topPositionBlackBlock);
 
 activateAnimationOnBlock(line2, topPositionPortfolioBlock);
-activateAnimationOnBlock(small_words2, topPositionPortfolioBlock);
-activateAnimationOnBlock(big_words2, topPositionPortfolioBlock);
+activateAnimationOnBlock(smallWords2, topPositionPortfolioBlock);
+activateAnimationOnBlock(bigWords2, topPositionPortfolioBlock);
 
 activateAnimationOnBlock(line3, topPositionPartnersBlock);
-activateAnimationOnBlock(small_words3, topPositionPartnersBlock);
-activateAnimationOnBlock(big_words3, topPositionPartnersBlock);
+activateAnimationOnBlock(smallWords3, topPositionPartnersBlock);
+activateAnimationOnBlock(bigWords3, topPositionPartnersBlock);
 
 activateAnimationOnBlock(line4, topPositionGetContactBlock);
-activateAnimationOnBlock(small_words4, topPositionGetContactBlock);
-activateAnimationOnBlock(big_words4, topPositionGetContactBlock);
+activateAnimationOnBlock(smallWords4, topPositionGetContactBlock);
+activateAnimationOnBlock(bigWords4, topPositionGetContactBlock);

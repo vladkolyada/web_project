@@ -1,15 +1,24 @@
 {% extends "worky/home.html" %}
+{% load widget_tweaks %}
 
 {% block title %}Services{% endblock %}
 
 {% block content %}
-    <link href="\static\styles\page_services\st_best_services.css" rel="stylesheet" type="text/css">
-    <link href="\static\styles\page_services\st_variety_options.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\page_services\style_best_services.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\page_services\styl_variety_options.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\page_services\styl_latest_news.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\partners_bl.css" rel="stylesheet" type="text/css">
     <style>
         .get_contact_block {
             position: absolute;
             left: 542px;
-            top: 3460px;
+            top: 3550px;
+        }
+        
+        .partners_block {
+            position: absolute;
+            left: 543px;
+            top: 2400px;
         }
     </style>
     <div class="best_services">
@@ -24,48 +33,48 @@
             Lorem Ipsum’s origins extend far back to a scrambled Latin passage.
         </p>
         <div id="interior_planing_block">
-            <img src="\static\interior_planing_img.png" id="interior_planing_img" style="width: 120px; height: 120px;">
-            <p id="upper_words_interiror_planing">INTERIOR PLANING</p>
+            <a href="blog"><img src="\static\interior_planing_img.png" id="interior_planing_img" style="width: 120px; height: 120px;"></a>
+            <a href="blog"><p id="upper_words_interiror_planing">INTERIOR PLANING</p></a>
             <p id="text_interior_planing">
                 A relaxing bathroom helps you start and end your day in good spirits. 
                 It’s beneficial to have well designed storage to keep an open, clean feel.
             </p>
         </div>    
         <div id="LANDSPACING_block">
-            <img src="\static\landspacing_img.png" id="LANDSPACING_img" style="width: 120px; height: 120px;">
-            <p id="upper_words_LANDSPACING">LANDSPACING</p>
+            <a href="blog"><img src="\static\landspacing_img.png" id="LANDSPACING_img" style="width: 120px; height: 120px;"></a>
+            <a href="blog"><p id="upper_words_LANDSPACING">LANDSPACING</p></a>
             <p id="text_LANDSPACING">
                 We all are living busy lives, giving time to family, friends, and work, hence our bedroom is oftentimes 
                 the place where we go to relax and escape everyday life struggles.
             </p>
         </div>  
         <div id="decoration_block">
-            <img src="\static\decoration_img.png" id="decoration_img" style="width: 120px; height: 120px;">
-            <p id="upper_words_decoration">DECORATION</p>
+            <a href="blog"><img src="\static\decoration_img.png" id="decoration_img" style="width: 120px; height: 120px;"></a>
+            <a href="blog"><p id="upper_words_decoration">DECORATION</p></a>
             <p id="text_decoration">
                 For improving entire appeal of the house homeowners can opt for the renovation projects. 
                 Unique renovation can completely.
             </p>
         </div> 
         <div id="interior_design_block">
-            <img src="\static\interior_design_img.png" id="interior_design_img" style="width: 120px; height: 120px;">
-            <p id="upper_words_interior_design">INTERIOR DESIGN</p>
+            <a href="blog"><img src="\static\interior_design_img.png" id="interior_design_img" style="width: 120px; height: 120px;"></a>
+            <a href="blog"><p id="upper_words_interior_design">INTERIOR DESIGN</p></a>
             <p id="text_interior_design">
                 We combine decades of design projecting experience with an unrelenting dedication to setting new benchmarks 
                 in the lighting marketplace.
             </p>
         </div> 
         <div id="architecture_block">
-            <img src="\static\architecture_img.png" id="architecture_img" style="width: 120px; height: 120px;">
-            <p id="upper_words_architecture">ARCHITECTURE</p>
+            <a href="blog"><img src="\static\architecture_img.png" id="architecture_img" style="width: 120px; height: 120px;"></a>
+            <a href="blog"><p id="upper_words_architecture">ARCHITECTURE</p></a>
             <p id="text_architecture">
                 We offer dozens of custom options - from special finishes to hand-applied gilding to a choice of leg styles 
                 on some pieces, and even more choices.
             </p>
         </div> 
         <div id="style_selection_block">
-            <img src="\static\style_selection_img.png" id="style_selection_img" style="width: 120px; height: 120px;">
-            <p id="upper_words_style_selection">STYLE SELECTION</p>
+            <a href="blog"><img src="\static\style_selection_img.png" id="style_selection_img" style="width: 120px; height: 120px;"></a>
+            <a href="blog"><p id="upper_words_style_selection">STYLE SELECTION</p></a>
             <p id="text_style_selection">
                 We understand that most homeowners don’t undertake major exterior replacements and redesign 
                 projects more than once, and that’s why our goal.
@@ -122,4 +131,43 @@
             </a>
         </div>
     </div>
+    <div class="partners_block">
+        <p id="small_words3">PARTNERS</p>
+        <p id="big_words3">OUR CLIENTS & PARTNERS</p>
+        <svg width="85" height="5" viewBox="0 0 85 5" fill="none" xmlns="http://www.w3.org/2000/svg" id="line3">
+          <line y1="2.30121" x2="85" y2="2.30121" stroke="#F7992B" stroke-width="4"/>
+        </svg>
+        <img src="\static\partner_1.png" id="partner_1">
+        <img src="\static\partner_2.png" id="partner_2">
+        <img src="\static\partner_3.png" id="partner_3">
+        <img src="\static\partner_4.png" id="partner_4">
+        <img src="\static\partner_5.png" id="partner_5">
+        <img src="\static\partner_6.png" id="partner_6">
+    </div>
+    <div class="latest_news_block">
+        <div id="yellow_block">
+            <form action="{% url 'home' %}" method="post">
+                <p id="small_words3_yb">SUBSCRIBE</p>
+                <p id="big_words3_yb">JOIN OUR NEWSLETTER</p>
+                <p id="text_newsletter">Good news & event details as well straight to your incoming mail!</p>
+                {% csrf_token %}
+                {% render_field form2.email_for_newsletter placeholder="YOUR EMAIL" id+="input_email_yellowblock" %}
+                <button type="submit" id="send_button_yellowblock"><span>SEND</span></button>
+            </form>
+        </div>
+
+        <div id="black_block">
+            <p id="small_words3_bb">LATEST NEWS</p>
+            <p id="big_words3_bb">TOP INSIGHTS ON THE CURRENT INDUSTRY</p>
+            <svg width="85" height="5" viewBox="0 0 85 5" fill="none" xmlns="http://www.w3.org/2000/svg" id="line_latest_news">
+                <line y1="2.30121" x2="85" y2="2.30121" stroke="#F7992B" stroke-width="4"/>
+            </svg>
+            <a href="about"><p id="sustainable_building_design_link">SUSTAINABLE BUILDING DESIGN</p></a>
+            <p id="text_latest_news">Like many older U.S. cities, our nation’s capital infrastructure dates back to the early 
+                1800s and their storm and wastewater treatment system is no longer able to accommodate heavy rain events, 
+                causing overflows of untreated waste into nearby rivers and…</p>
+        </div>
+    </div>
+
+    <script src="\static\js\src\services_sct.js"></script>
 {% endblock %}

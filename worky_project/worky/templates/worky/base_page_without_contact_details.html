@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+    <title>{% block title %}Home{% endblock %}</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="\static\styles\style.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\y_and_b_blocks.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\portfolio_block.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\get_contact_block.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\partners_bl.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\st_about.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\sty_about2.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="head_block" >
+      <div>
+        <a href="/worky">
+          <img class="logo" src="\static\logo.png">
+        </a>
+      </div>
+      <div>
+        {% if home == True %}
+          <a href="/worky" id="head_text"> HOME </a>
+        {% else %}
+          <a href="/worky" id="head_text_"> HOME </a>
+        {% endif %}
+
+        {% if about == True %}
+          <a href="/worky/about" id="head_text1"> ABOUT </a>
+        {% else %}
+          <a href="/worky/about" id="head_text1_"> ABOUT </a>
+        {% endif %}
+
+        {% if services == True %}
+          <a href="/worky/services" id="head_text2"> SERVICES </a>
+        {% else %}
+          <a href="/worky/services" id="head_text2_"> SERVICES </a>
+        {% endif %}
+
+        {% if blog == True %}
+          <a href="/worky/blog" id="head_text3"> BLOG </a>
+        {% else %}
+          <a href="/worky/blog" id="head_text3_"> BLOG </a>
+        {% endif %}
+      </div>
+    </div>
+    {% block content %}
+    {% endblock %}
+  </body>
+</html>

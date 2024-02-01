@@ -1,0 +1,99 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Oswald-Bold;
+    src: url(oswald/Oswald-Bold.ttf);
+}
+@font-face {
+    font-family: Oswald-Regular;
+    src: url(oswald/Oswald-Regular.ttf);
+}
+@font-face {
+    font-family: Oswald-Light;
+    src: url(oswald/Oswald-Light.ttf);
+    }
+
+
+
+.create_post_block {
+    position: absolute;
+    top: 450px;
+    left: 550px;
+    width: 512px;
+    height: 512px;
+}
+
+
+#input_title {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    width: 438px;
+    height: 34px;
+    border-radius: 5px;
+    border: 1px solid #AFAFAF;
+    background: #FFF;
+    font-family: Montserrat;
+    padding: 5px;
+}
+
+#input_image {
+    position: absolute;
+    top: 130px;
+    left: 40px;
+    width: 438px;
+    height: 34px;
+    border-radius: 5px;
+    border: 1px solid #AFAFAF;
+    background: #FFF;
+    font-family: Montserrat;
+    padding: 5px;
+}
+
+#input_text {
+    position: absolute;
+    top: 180px;
+    left: 40px;
+    width: 438px;
+    height: 175px;
+    min-height: 175px;
+    border-radius: 5px;
+    border: 1px solid #AFAFAF;
+    background: #FFF;
+    font-family: Montserrat;
+    padding: 5px;
+    resize: vertical;
+}
+
+#create_post_button {
+    width: 82px;
+    height: 31px;
+    border-radius: 4px;
+    background: #F7992B;
+    position: absolute;
+    left: 40px;
+    top: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#create_post_button:hover {
+    background: #ffac4e;
+}
+
+#create_post_button span {
+    color: #FFF;
+    font-family: Oswald-Regular;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 1;
+    letter-spacing: 3.5px;
+    margin: 0;
+}
