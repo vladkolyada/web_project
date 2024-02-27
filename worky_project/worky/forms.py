@@ -1,5 +1,5 @@
 from django import forms
-from .models import Posts
+from .models import Post
 
 
 class GetContactForm(forms.Form):
@@ -19,6 +19,6 @@ class LogInForAdminForm(forms.Form):
 
 class PostForm(forms.ModelForm):
     class Meta:
-        model = Posts
+        model = Post
         fields = ("title", "text", "image")
 

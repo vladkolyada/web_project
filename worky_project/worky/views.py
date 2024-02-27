@@ -1,9 +1,14 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import Http404, HttpResponse
 from django.contrib.auth import login, authenticate, logout
-from .models import Client, Message, Newsletter, Admin, Posts
+from .models import Client, Message, Newsletter, Admin, Post
 from .forms import GetContactForm, FormForNewsletterDB, LogInForAdminForm, PostForm
 from django.contrib.auth.decorators import login_required
+import datetime
+
+d = datetime.datetime.now()
+# date_t = d.strftime("%d.%m.%Y %H:%M:%S")
+# date_d = d.strftime("%d.%m.%Y %H:%M:%S")
 
 # Create your views here.
 
@@ -25,7 +30,7 @@ def home(request):
                 client = Client(name=name, email=email)
                 client.save()
 
-            client_message = Message(client=client, message=message)
+            client_message = Message(client=client, message=message, time=str(d.now())[0:-7])
             client_message.save()
     return render(request, "worky/home.html", {
         "form": form,
@@ -102,7 +107,7 @@ def services(request):
 
 
 def blog(request):
-    posts = Posts.objects.all()
+    posts = Post.objects.all()
 
     return render(request, "worky/blog.html", {
         'posts': posts,
@@ -128,13 +133,13 @@ def log_in_admin(request):
 
 def log_out_admin(request):
     logout(request)
-    return render(request, "users/login.html", {
+    return render(request, "worky/log_in_admin.html", {
             })
 
 
 def admin_profile(request, admin_username):
     admin = Admin.objects.get(username=admin_username)
-    posts = Posts.objects.filter(author=admin)
+    posts = Post.objects.filter(author=admin)
 
     return render(request, "worky/admin_profile.html", {
         'admin': admin,
@@ -142,15 +147,14 @@ def admin_profile(request, admin_username):
     })
 
 
-@login_required
+@login_required(login_url="/worky/log_in_admin")
 def create_post(request):
-    if not request.user.is_authenticated:
-        return redirect("/worky/home")
     if request.method == "POST":
         form = PostForm(data=request.POST, files=request.FILES)
         if form.is_valid():
             admin = Admin.objects.get(username=request.user.username)
             form.instance.author = admin
+            form.instance.date = str(d.now())[0:-7]
             form.save()
             return redirect('admin_profile', admin_username=request.user.username)
     else:
@@ -160,5 +164,12 @@ def create_post(request):
     }
 
     return render(request, "worky/create_post.html", context=context)
+
+
+def post(request, post_id):
+    same_post = Post.objects.filter(id=post_id)[0]
+    return render(request, "worky/post.html", context={
+        'post': same_post,
+    })
 
 

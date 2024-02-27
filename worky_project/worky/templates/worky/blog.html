@@ -3,6 +3,7 @@
 {% block title%}Blog{% endblock %}
 
 {% block content %}
+<link href="\static\styles\page_blog\style_for_blog_page.css" rel="stylesheet" type="text/css">
 <style>
     .end_block {
         position: relative;
@@ -39,16 +40,19 @@
     window.addEventListener('load', () => {
         document.getElementsByClassName('end_block')[0].style.top = document.getElementsByClassName('blog_content')[0].clientHeight + 500 + 'px';
     });
+
+    let docTitle = document.title;
+    window.addEventListener("blur", () => {document.title = "Come back";})
+    window.addEventListener("focus", () => {document.title = docTitle; })
 </script>
 
-<h1 style="position: absolute; top: 210px; left: 150px;">POSTS: </h1>
-
-<div class="blog_content" style="position: absolute; top: 300px; left: 150px;">
+<div class="blog_content" style="position: absolute; top: 300px; left: 350px;">
     {% for post in posts %}
         <div style="width: 700px; word-wrap: break-word;">
-            <h2>{{ post.title }}</h2><br>
+            <a href="post/{{ post.id }}"><h2 id="post_title">{{ post.title }}</h2></a><br>
+            <p id="admin_and_date_post">By <a href="admin_profile/{{ post.author.username }}">{{ post.author.username }}</a> Posted {{ post.date }}</p>
             <img src="{{ post.image.url }}" height="400px" width="600px" alt="..."><br>
-            <p style="width: 600px;">{{ post.text }}</p>
+            <p style="width: 600px;" id="post_text">{{ post.text }}</p>
         </div>
         <hr>
     {% endfor %}
@@ -56,7 +60,7 @@
 
 <div class="end_block">
     <img class="logo_end_block" src="\static\logo.png">
-    <p id="end_block_text">© 2023 year</p>
+    <p id="end_block_text">© 2024 year</p>
 </div>
 
 {% endblock %}

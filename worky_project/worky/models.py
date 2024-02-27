@@ -2,6 +2,8 @@ import datetime
 from django.db import models
 from werkzeug.security import generate_password_hash, check_password_hash
 
+d = datetime.datetime.now()
+
 
 class Client(models.Model):
     id = models.AutoField(primary_key=True)
@@ -16,7 +18,7 @@ class Message(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name="client_message",
                                default=None, null=False)
     message = models.CharField(max_length=700)
-    time = models.DateTimeField(default=None)
+    time = models.CharField(max_length=200)
 
     def __str__(self):
         return (f"{self.client} message({self.time}):\n"
@@ -47,15 +49,16 @@ class Admin(models.Model):
         return f"{self.first_name} {self.last_name} (username: {self.username}, id: {self.id})"
 
 
-class Posts(models.Model):
+class Post(models.Model):
     id = models.AutoField(primary_key=True, unique=True)
     author = models.ForeignKey(Admin, on_delete=models.CASCADE, related_name='admin_post', null=False, default=None)
     title = models.CharField(max_length=170, null=False, default='default title')
     text = models.TextField(max_length=3000, null=False)
     image = models.ImageField(upload_to='img/%y')
+    date = models.CharField(max_length=200)
 
     def __str__(self):
-        return f"{self.title} (id: {self.id})"
+        return f"{self.title} (id: {self.id}, date: {self.date})"
 
 
 
