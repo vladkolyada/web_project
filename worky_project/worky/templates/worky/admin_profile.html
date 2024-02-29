@@ -3,18 +3,32 @@
 {% block title %}{{ admin.username }} profile{% endblock %}
 
 {% block content %}
-<link href="\static\styles\admin_pages_style\style_admin_profile.css" rel="stylesheet" type="text/css">
+<link href="\static\styles\admin_pages_style\st_admin_profile.css" rel="stylesheet" type="text/css">
+<link href="\static\styles\page_blog\sty_for_blog_page.css" rel="stylesheet" type="text/css">
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+    var postsTexts = document.getElementsByClassName("post_text");
+    for(var i = 0; i < postsTexts.length; i++){
+        var postText = postsTexts[i].textContent;
+        var words = postText.split(" ");
+        if (words.length > 10) {
+            var limitedText = words.slice(0, 10).join(" ");
+            var newText = limitedText + "...";
+            postsTexts[i].innerHTML = newText;
+        }
+    }
+});
+</script>
 
 <h1 id="title_author"> Author: {{ admin.first_name }} {{ admin.last_name }} </h1>
 
-<h1 style="position: absolute; top: 250px; left: 150px;">POSTS: </h1>
-
-<div style="position: absolute; top: 300px; left: 150px;">
+<div style="position: absolute; top: 200px; left: 350px;">
     {% for post in posts %}
         <div style="width: 700px; word-wrap: break-word;">
-            <h2>{{ post.title }}</h2><br>
+            <a href="/worky/post/{{ post.id }}" style="text-decoration: none;"><h2 id="post_title">{{ post.title }}</h2></a><br>
+            <p id="admin_and_date_post">By <a href="admin_profile/{{ post.author.username }}">{{ post.author.username }}</a>. Posted {{ post.date }}</p>
             <img src="{{ post.image.url }}" height="400px" width="600px" alt="..."><br>
-            <p style="width: 600px;">{{ post.text }}</p>
+            <p style="width: 600px;" class="post_text">{{ post.text }}</p>
         </div>
         <hr>
     {% endfor %}

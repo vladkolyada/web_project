@@ -14,6 +14,10 @@
     font-family: Oswald-Light;
     src: url(oswald/Oswald-Light.ttf);
 }
+@font-face {
+    font-family: Roboto-Light;
+    src: url(Roboto/Roboto-Light.ttf);
+}
 
 .head_block {
     position: absolute;

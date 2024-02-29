@@ -107,10 +107,12 @@ def services(request):
 
 
 def blog(request):
-    posts = Post.objects.all()
+    posts = Post.objects.all()[::-1]
+    recent_posts = posts[:4]
 
     return render(request, "worky/blog.html", {
         'posts': posts,
+        'recent_posts': recent_posts,
         "home": False,
         "about": False,
         "services": False,
@@ -139,7 +141,7 @@ def log_out_admin(request):
 
 def admin_profile(request, admin_username):
     admin = Admin.objects.get(username=admin_username)
-    posts = Post.objects.filter(author=admin)
+    posts = Post.objects.filter(author=admin)[::-1]
 
     return render(request, "worky/admin_profile.html", {
         'admin': admin,
@@ -154,7 +156,7 @@ def create_post(request):
         if form.is_valid():
             admin = Admin.objects.get(username=request.user.username)
             form.instance.author = admin
-            form.instance.date = str(d.now())[0:-7]
+            form.instance.date = str(d.strftime("%B %d, %Y"))
             form.save()
             return redirect('admin_profile', admin_username=request.user.username)
     else:

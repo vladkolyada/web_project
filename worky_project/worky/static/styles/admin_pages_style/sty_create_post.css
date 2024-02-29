@@ -1,6 +1,6 @@
 @font-face {
     font-family: Montserrat;
-    src: url(montserrat/Montserrat-VariableFont_wght.ttf);
+    src: url(montserrat/static/Montserrat-Light.ttf);
 }
 @font-face {
     font-family: Oswald-Bold;
@@ -56,8 +56,8 @@
     position: absolute;
     top: 180px;
     left: 40px;
-    width: 438px;
-    height: 175px;
+    width: 700px;
+    height: 200px;
     min-height: 175px;
     border-radius: 5px;
     border: 1px solid #AFAFAF;
@@ -72,9 +72,10 @@
     height: 31px;
     border-radius: 4px;
     background: #F7992B;
+    font-family: Montserrat;
     position: absolute;
-    left: 40px;
-    top: 400px;
+    left: -50px;
+    top: 180px;
     display: flex;
     align-items: center;
     justify-content: center;

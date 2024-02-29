@@ -16,18 +16,40 @@
 }
 @font-face {
     font-family: Roboto-Light;
-    src: url(Roboto/Roboto-Light);
+    src: url(Roboto/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: Roboto-Black;
+    src: url(Roboto/Roboto-Black.ttf);
 }
 
 
 #post_title {
-    font-family: sans-serif;
+    font-family: Roboto-Light;
+    position: relative;
+    top: 35px;
 }
 
-#post_text {
+.post_text {
     font-family: Montserrat;
 }
 
 #admin_and_date_post {
     font-family: Montserrat;
+}
+
+
+.right_sidebar {
+    position: absolute;
+    left: 1100px;
+    top: 200px;
+}
+
+.recent_post_title {
+    font-family: Roboto-Light;
+    text-decoration: none;
+}
+
+h4 {
+    font-family: Roboto-Light;
 }
