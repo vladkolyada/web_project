@@ -78,7 +78,7 @@
     top: 370px;
 }
 
-#upper_words_interiror_planing{
+#upper_words_interior_planing{
     position: absolute;
     left: 175px;
     top: -20px;
@@ -91,7 +91,7 @@
     transition: color 0.3s ease;
 }
 
-#upper_words_interiror_planing:hover{
+#upper_words_interior_planing:hover{
     color: #F7992B;
 }
 

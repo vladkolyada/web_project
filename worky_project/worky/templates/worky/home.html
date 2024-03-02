@@ -200,9 +200,9 @@
       <a href="https://twitter.com"><img src="\static\twitter.png" id="twitter"></a>
       <form action="{% url 'home' %}" method="post">
         {% csrf_token %}
-        {% render_field form.name placeholder="YOUR NAME" id+="input_name"%}
-        {% render_field form.email placeholder="YOUR EMAIL" id+="input_email"%}
-        {% render_field form.message placeholder="YOUR MESSAGE" id+="expandingTextarea"%}
+        {% render_field form.name placeholder="YOUR NAME" id="input_name"%}
+        {% render_field form.email placeholder="YOUR EMAIL" id="input_email"%}
+        {% render_field form.message placeholder="YOUR MESSAGE" id="expandingTextarea"%}
         <button type="submit" id="send_button"><span>SEND</span></button>
       </form>
       <div class="end_block">
