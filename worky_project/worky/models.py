@@ -18,7 +18,7 @@ class Message(models.Model):
     client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name="client_message",
                                default=None, null=False)
     message = models.CharField(max_length=700)
-    time = models.CharField(max_length=200)
+    time = models.DateTimeField(null=False, auto_now_add=True)
 
     def __str__(self):
         return (f"{self.client} message({self.time}):\n"
@@ -55,10 +55,19 @@ class Post(models.Model):
     title = models.CharField(max_length=170, null=False, default='default title')
     text = models.TextField(max_length=3000, null=False)
     image = models.ImageField(upload_to='img/%y')
-    date = models.CharField(max_length=200)
+    date = models.DateField(null=False, auto_now_add=True)
 
     def __str__(self):
         return f"{self.title} (id: {self.id}, date: {self.date})"
 
 
+class Comment(models.Model):
+    id = models.AutoField(primary_key=True, unique=True)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='post_comment', null=False, default=None)
+    client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name='client_comment',
+                               null=False, default=None)
+    comment = models.TextField(max_length=355, null=False)
+    date = models.DateTimeField(null=False, auto_now_add=True)
 
+    def __str__(self):
+        return f"{self.client}`s comment of \"{self.post}\" post (time: {self.date}, id: {self.id}): {self.comment}"

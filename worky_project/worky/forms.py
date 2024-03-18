@@ -1,5 +1,5 @@
 from django import forms
-from .models import Post
+from .models import Post, Comment
 
 
 class GetContactForm(forms.Form):
@@ -22,3 +22,8 @@ class PostForm(forms.ModelForm):
         model = Post
         fields = ("title", "text", "image")
 
+
+class CommentForm(forms.Form):
+    comment = forms.CharField(widget=forms.Textarea())
+    email = forms.CharField(max_length=100)
+    name = forms.CharField(max_length=60)

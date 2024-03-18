@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.http import Http404, HttpResponse
 from django.contrib.auth import login, authenticate, logout
-from .models import Client, Message, Newsletter, Admin, Post
-from .forms import GetContactForm, FormForNewsletterDB, LogInForAdminForm, PostForm
+from .models import Client, Message, Newsletter, Admin, Post, Comment
+from .forms import GetContactForm, FormForNewsletterDB, LogInForAdminForm, PostForm, CommentForm
 from django.contrib.auth.decorators import login_required
 import datetime
 
@@ -11,6 +11,18 @@ d = datetime.datetime.now()
 # date_d = d.strftime("%d.%m.%Y %H:%M:%S")
 
 # Create your views here.
+
+
+def archive_fun(db):
+    archive_urls = []
+    for post_i in db:
+        if archive_urls.count({'all': f"{post_i.date.strftime('%B %Y')}", 'year': f"{post_i.date.year}",
+                               'month': f"{post_i.date.month}"}) < 1:
+            new_item = {'all': f"{post_i.date.strftime('%B %Y')}",
+                        'year': f"{post_i.date.year}",
+                        'month': f"{post_i.date.month}"}
+            archive_urls.append(new_item)
+    return archive_urls
 
 
 def home(request):
@@ -30,7 +42,7 @@ def home(request):
                 client = Client(name=name, email=email)
                 client.save()
 
-            client_message = Message(client=client, message=message, time=str(d.now())[0:-7])
+            client_message = Message(client=client, message=message)
             client_message.save()
     return render(request, "worky/home.html", {
         "form": form,
@@ -109,10 +121,10 @@ def services(request):
 def blog(request):
     posts = Post.objects.all()[::-1]
     recent_posts = posts[:4]
-
     return render(request, "worky/blog.html", {
         'posts': posts,
         'recent_posts': recent_posts,
+        'archive_urls': archive_fun(posts),
         "home": False,
         "about": False,
         "services": False,
@@ -142,10 +154,13 @@ def log_out_admin(request):
 def admin_profile(request, admin_username):
     admin = Admin.objects.get(username=admin_username)
     posts = Post.objects.filter(author=admin)[::-1]
+    recent_posts = posts[:4]
 
     return render(request, "worky/admin_profile.html", {
         'admin': admin,
         'posts': posts,
+        'recent_posts': recent_posts,
+        'archive_urls': archive_fun(posts),
     })
 
 
@@ -156,7 +171,6 @@ def create_post(request):
         if form.is_valid():
             admin = Admin.objects.get(username=request.user.username)
             form.instance.author = admin
-            form.instance.date = str(d.strftime("%B %d, %Y"))
             form.save()
             return redirect('admin_profile', admin_username=request.user.username)
     else:
@@ -170,8 +184,50 @@ def create_post(request):
 
 def post(request, post_id):
     same_post = Post.objects.filter(id=post_id)[0]
+    recent_posts = Post.objects.all()[::-1][:4]
+    comments = Comment.objects.filter(post=same_post)
+
+    form = CommentForm(request.POST)
+
+    if request.method == "POST":
+        if form.is_valid():
+            name = form.cleaned_data["name"]
+            email = form.cleaned_data["email"]
+            comment = form.cleaned_data["comment"]
+
+            client_filtering = Client.objects.filter(email=email).first()
+
+            if client_filtering:
+                client = client_filtering
+            else:
+                client = Client(name=name, email=email)
+                client.save()
+
+            client_comment = Comment(client=client, post=same_post, comment=comment)
+            client_comment.save()
+
     return render(request, "worky/post.html", context={
         'post': same_post,
+        'recent_posts': recent_posts,
+        'archive_urls': archive_fun(Post.objects.all()[::-1]),
+        'form': form,
+        'comments': comments[::-1],
+        'len_comments': len(comments),
     })
 
 
+def archive(request, month, year):
+    posts = Post.objects.all()[::-1]
+    archive_posts = []
+    recent_posts = posts[:4]
+    for post_i in posts:
+        if post_i.date.month == month and post_i.date.year == year:
+            archive_posts.append(post_i)
+
+    return render(request, "worky/archive.html", context={
+        'archive': archive_posts,
+        'month': posts[0].date.strftime("%B"),
+        'year': year,
+        'recent_posts': recent_posts,
+        'archive_urls': archive_fun(posts),
+    })

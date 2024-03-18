@@ -1,0 +1,155 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Oswald-Bold;
+    src: url(oswald/Oswald-Bold.ttf);
+}
+@font-face {
+    font-family: Oswald-Regular;
+    src: url(oswald/Oswald-Regular.ttf);
+}
+@font-face {
+    font-family: Oswald-Light;
+    src: url(oswald/Oswald-Light.ttf);
+}
+@font-face {
+    font-family: Roboto-Light;
+    src: url(Roboto/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: Roboto-Black;
+    src: url(Roboto/Roboto-Black.ttf);
+}
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(Roboto/Roboto-Regular.ttf);
+}
+
+
+.post_title {
+    font-family: Roboto-Light;
+    text-decoration: none;
+    position: relative;
+    top: 35px;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.post_title:hover {
+    color: #F7992B;
+}
+
+.post_text {
+    font-family: Montserrat;
+    font-size: 18px;
+    line-height: 40px;
+    opacity: 0.8;
+    width: 780px;
+}
+
+.post_img {
+    max-width: 780px;
+    max-height: 540px;
+    border-radius: 4px;
+}
+
+.comment_button {
+    width: 48px;
+    height: 32px;
+    border-radius: 4px;
+    background: #F1F4F6;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.comment_button:hover {
+    background: #F7992B;
+}
+
+.comment_icon {
+    position: relative;
+    top: 8px;
+    left: 16px;
+    fill: #A1A2A4;
+    transition: fill 0.3s ease;
+}
+
+.comment_button:hover .comment_icon {
+    fill: #FFFFFF;
+}
+
+#admin_and_date_post {
+    font-family: Montserrat;
+    color: #a1a2a4;
+}
+
+a {
+    color:#F7992B;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-family: Montserrat;
+}
+
+a:hover {
+    color: black;
+}
+
+
+.right_sidebar {
+    position: absolute;
+    left: 830px;
+    top: 95px;
+    width: 360px;
+    
+}
+
+.recent_post_title {
+    font-family: Roboto-Regular;
+    font-style: normal;
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.recent_post_title:hover {
+    color: #F7992B;
+}
+
+h4 {
+    font-family: Roboto-Light;
+}
+
+#button_to_search {
+    position: relative;
+    top: -39px;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background: #F7992B;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#button_to_search:hover {
+    background: #ffac4e;
+}
+
+#input_to_search {
+    position: relative;
+    top: -40px;
+    width: 80%;
+    height: 21px;
+    border-radius: 5px;
+    border: 1px solid #AFAFAF;
+    background: #FFF;
+    font-family: Montserrat;
+    padding: 5px 9px;
+}
