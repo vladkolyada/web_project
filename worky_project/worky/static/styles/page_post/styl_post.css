@@ -35,9 +35,33 @@
 
 .date_comment {
     font-family: Montserrat;
-    color: #a1a2a4; 
+    color: #a1a2a4;
 }
 
 .text_comment {
     font-family: Montserrat;
+    position: relative;
+    left: 20px;
+}
+
+
+#submit_to_comment {
+    position: relative;
+    top: 20px;
+    left: 418px;
+    width: 792px;
+    height: 37px;
+    border-radius: 4px;
+    background: #F7992B;
+    font-family: Roboto-Black;
+    color: #FFF;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#submit_to_comment:hover {
+    background: #ffac4e;
 }

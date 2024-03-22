@@ -1,0 +1,110 @@
+@font-face {
+    font-family: Montserrat;
+    src: url(montserrat/Montserrat-VariableFont_wght.ttf);
+}
+@font-face {
+    font-family: Oswald-Bold;
+    src: url(oswald/Oswald-Bold.ttf);
+}
+@font-face {
+    font-family: Oswald-Regular;
+    src: url(oswald/Oswald-Regular.ttf);
+}
+@font-face {
+    font-family: Oswald-Light;
+    src: url(oswald/Oswald-Light.ttf);
+}
+@font-face {
+    font-family: Roboto-Light;
+    src: url(Roboto/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: Roboto-Black;
+    src: url(Roboto/Roboto-Black.ttf);
+}
+@font-face {
+    font-family: Roboto-Regular;
+    src: url(Roboto/Roboto-Regular.ttf);
+}
+
+
+#content_search_block {
+    position: absolute; 
+    top: 200px;
+    left: 400px;
+    max-width: 1200px;
+}
+
+#content_search_block_1 {
+    position: absolute; 
+    top: 200px;
+    left: 590px;
+    width: 770px;
+}
+
+#search_query_title {
+    font-family: Roboto-Regular;
+    font-weight: 400px;
+    text-align: center;
+}
+
+.search_result_title {
+    font-family: Roboto-Light;
+    color: black;
+    transition: color 0.3s ease;
+}
+
+.search_result_title:hover {
+    color: #F7992B;
+}
+
+.search_result_text {
+    font-family: Montserrat;
+    color: #3b3d42;
+}
+
+#search_query_title_1 {
+    font-family: Roboto-Regular;
+    font-weight: 400px;
+    position: relative;
+    left: 270px;
+}
+
+#information_text {
+    color: #3b3d42;
+    font-family: Montserrat;
+    text-align: center;
+    font-size: 14px;
+    position: relative;
+    left: -20px;
+}
+
+#button_to_search {
+    position: relative;
+    top: 1px;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    background: #F7992B;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+#button_to_search:hover {
+    background: #ffac4e;
+}
+
+#input_to_search {
+    position: relative;
+    top: 0px;
+    width: 90%;
+    height: 21px;
+    border-radius: 5px;
+    border: 1px solid #AFAFAF;
+    background: #FFF;
+    font-family: Montserrat;
+    padding: 5px 9px;
+}

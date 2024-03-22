@@ -13,4 +13,5 @@ urlpatterns = [
     path('create_post', views.create_post, name='create_post'),
     path('post/<int:post_id>', views.post, name='post'),
     path('archive/<int:year>/<int:month>', views.archive, name='archive'),
+    path('search/<str:search_query>', views.search, name='search'),
 ]

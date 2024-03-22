@@ -1,10 +1,10 @@
-from django.shortcuts import render, redirect, get_object_or_404
-from django.http import Http404, HttpResponse
+from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
 from .models import Client, Message, Newsletter, Admin, Post, Comment
-from .forms import GetContactForm, FormForNewsletterDB, LogInForAdminForm, PostForm, CommentForm
+from .forms import GetContactForm, FormForNewsletterDB, PostForm, CommentForm, SearchForm
 from django.contrib.auth.decorators import login_required
 import datetime
+from django.db.models import Q
 
 d = datetime.datetime.now()
 # date_t = d.strftime("%d.%m.%Y %H:%M:%S")
@@ -121,10 +121,20 @@ def services(request):
 def blog(request):
     posts = Post.objects.all()[::-1]
     recent_posts = posts[:4]
+
+    search_form = SearchForm(request.POST)
+    if request.method == 'POST':
+        if 'search_query' in request.POST:
+            if search_form.is_valid():
+                search_query = search_form.cleaned_data['search_query']
+                return redirect(f'/worky/search/{search_query}')
+    else:
+        search_form = SearchForm()
     return render(request, "worky/blog.html", {
         'posts': posts,
         'recent_posts': recent_posts,
         'archive_urls': archive_fun(posts),
+        'search_form': search_form,
         "home": False,
         "about": False,
         "services": False,
@@ -154,10 +164,19 @@ def log_out_admin(request):
 def admin_profile(request, admin_username):
     admin = Admin.objects.get(username=admin_username)
     posts = Post.objects.filter(author=admin)[::-1]
-    recent_posts = posts[:4]
+    recent_posts = Post.odjects.all()[::-1][:4]
 
+    search_form = SearchForm(request.POST)
+    if request.method == 'POST':
+        if 'search_query' in request.POST:
+            if search_form.is_valid():
+                search_query = search_form.cleaned_data['search_query']
+                return redirect(f'/search/{search_query}')
+    else:
+        search_form = SearchForm()
     return render(request, "worky/admin_profile.html", {
         'admin': admin,
+        'form': search_form,
         'posts': posts,
         'recent_posts': recent_posts,
         'archive_urls': archive_fun(posts),
@@ -188,29 +207,39 @@ def post(request, post_id):
     comments = Comment.objects.filter(post=same_post)
 
     form = CommentForm(request.POST)
+    search_form = SearchForm(request.POST)
 
     if request.method == "POST":
-        if form.is_valid():
-            name = form.cleaned_data["name"]
-            email = form.cleaned_data["email"]
-            comment = form.cleaned_data["comment"]
+        if 'comment' and 'email' and 'name' in request.POST:
+            if form.is_valid():
+                name = form.cleaned_data["name"]
+                email = form.cleaned_data["email"]
+                comment = form.cleaned_data["comment"]
 
-            client_filtering = Client.objects.filter(email=email).first()
+                client_filtering = Client.objects.filter(email=email).first()
 
-            if client_filtering:
-                client = client_filtering
-            else:
-                client = Client(name=name, email=email)
-                client.save()
+                if client_filtering:
+                    client = client_filtering
+                else:
+                    client = Client(name=name, email=email)
+                    client.save()
 
-            client_comment = Comment(client=client, post=same_post, comment=comment)
-            client_comment.save()
+                client_comment = Comment(client=client, post=same_post, comment=comment)
+                client_comment.save()
+        if 'search_query' in request.POST:
+            if search_form.is_valid():
+                search_query = search_form.cleaned_data['search_query']
+                return redirect(f'/worky/search/{search_query}')
+    else:
+        form = CommentForm()
+        search_form = SearchForm()
 
     return render(request, "worky/post.html", context={
         'post': same_post,
         'recent_posts': recent_posts,
         'archive_urls': archive_fun(Post.objects.all()[::-1]),
         'form': form,
+        'search_form': search_form,
         'comments': comments[::-1],
         'len_comments': len(comments),
     })
@@ -220,14 +249,46 @@ def archive(request, month, year):
     posts = Post.objects.all()[::-1]
     archive_posts = []
     recent_posts = posts[:4]
+    search_form = SearchForm(request.POST)
+
     for post_i in posts:
         if post_i.date.month == month and post_i.date.year == year:
             archive_posts.append(post_i)
 
+    if request.method == 'POST':
+        if 'search_query' in request.POST:
+            if search_form.is_valid():
+                search_query = search_form.cleaned_data['search_query']
+                return redirect(f'/worky/search/{search_query}')
+    else:
+        search_form = SearchForm()
     return render(request, "worky/archive.html", context={
         'archive': archive_posts,
         'month': posts[0].date.strftime("%B"),
         'year': year,
+        'search_form': search_form,
         'recent_posts': recent_posts,
         'archive_urls': archive_fun(posts),
     })
+
+
+def search(request, search_query):
+    wanted_posts = []
+    if search_query:
+        wanted_posts = Post.objects.filter(Q(title__icontains=search_query) | Q(text__icontains=search_query))
+
+    search_form = SearchForm(request.POST)
+    if request.method == 'POST':
+        if 'search_query' in request.POST:
+            if search_form.is_valid():
+                search_query = search_form.cleaned_data['search_query']
+                return redirect(f'/worky/search/{search_query}')
+    else:
+        search_form = SearchForm()
+    return render(request, "worky/search.html", context={
+        'wanted_posts': wanted_posts,
+        'search_query': search_query,
+        'search_form': search_form,
+    })
+
+

@@ -4,8 +4,8 @@
 {% block title %}{{ post.title }}{% endblock %}
 
 {% block content %}
-    <link type="text/css" rel="stylesheet" href="/static/styles/page_post/style_post.css">
-    <link href="\static\styles\page_blog\style_for_blog_page.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="/static/styles/page_post/styl_post.css">
+    <link href="\static\styles\page_blog\sty_for_blog_page.css" rel="stylesheet" type="text/css">
     <style>
         .post_title_ {
             font-family: Roboto-Light;
@@ -25,7 +25,7 @@
         endBlock.style.top = textarea.scrollHeight - textarea.clientHeight + 'px';
         });
     </script>
-    <div class="post_content" style="position: absolute; top: 100px; left: 350px;">
+    <div class="post_content" style="position: absolute; top: 100px; left: 350px; width: 780px;">
         <div style="width: 700px; word-wrap: break-word;">
             <h1 class="post_title_">{{ post.title }}</h1><br>
             <p id="admin_and_date_post">By <a href="/worky/admin_profile/{{ post.author.username }}">{{ post.author.username }}</a> Posted {{ post.date }}</p>
@@ -40,7 +40,7 @@
 
         <h2 style="font-family: Roboto-Regular;">{{ len_comments }} Comments</h2><br>
 
-        <div class="all_comments_of_post">
+        <div id="all_comments_of_post">
             {% for comment in comments %}
                 <p class="user_data_comment"><b>{{ comment.client.name }}</b> <span class="date_comment">{{ comment.date }}</span></p>
                 <p class="text_comment">{{ comment.comment }}</p><br>
@@ -49,18 +49,22 @@
 
         <hr><br><br>
 
-        <form id="make_comment" action="/worky/post/{{ post.id }}#make_comment" method="post" style="position: relative; left: -418px;">
+        <h3 style="font-family: Roboto-Regular;">Leave a comment</h3>
+
+        <p style="font-family: Montserrat;">Your email address will not be published. Required fields are marked *</p>
+
+        <form id="make_comment" action="/worky/post/{{ post.id }}#all_comments_of_post" method="post" style="position: relative; left: -418px;">
             {% csrf_token %}
-            {% render_field form.comment placeholder="Comment *" id="expandingTextarea"%}
-            {% render_field form.name placeholder="Name *" id="input_name"%}
-            {% render_field form.email placeholder="E-mail *" id="input_email"%}
-            <button type="submit">SEND COMMENT</button>
-        </form>
+            {% render_field form.comment placeholder="Comment *" id="expandingTextarea" style="width: 780px;"%}
+            {% render_field form.name placeholder="Name *" id="input_name" style="width: 780px;"%}
+            {% render_field form.email placeholder="E-mail *" id="input_email" style="width: 780px;"%}
+            <button type="submit" id="submit_to_comment">SUBMIT COMMENT</button>
+        </form><br><br><br><br><br><br>
     
         <aside class="right_sidebar" action="{% url 'blog' %}">
             <form method="post">
                 {% csrf_token %}
-                <input type="text" placeholder="Enter keyword search" id="input_to_search">
+                {% render_field search_form.search_query placeholder="Enter keyword search" id="input_to_search" %}
                 <button id="button_to_search" type="submit">
                     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0 0 48 48" style="fill:#FFFFFF;">
                         <path d="M 20.5 6 C 12.515556 6 6 12.515562 6 20.5 C 6 28.484438 12.515556 35 20.5 35 C 23.773158 35 26.788919 33.893018 29.220703 32.050781 L 38.585938 41.414062 A 2.0002 2.0002 0 1 0 41.414062 38.585938 L 32.050781 29.220703 C 33.893017 26.788918 35 23.773156 35 20.5 C 35 12.515562 28.484444 6 20.5 6 z M 20.5 10 C 26.322685 10 31 14.677319 31 20.5 C 31 23.295711 29.914065 25.820601 28.148438 27.697266 A 2.0002 2.0002 0 0 0 27.701172 28.144531 C 25.824103 29.912403 23.29771 31 20.5 31 C 14.677315 31 10 26.322681 10 20.5 C 10 14.677319 14.677315 10 20.5 10 z"></path>

@@ -27,3 +27,7 @@ class CommentForm(forms.Form):
     comment = forms.CharField(widget=forms.Textarea())
     email = forms.CharField(max_length=100)
     name = forms.CharField(max_length=60)
+
+
+class SearchForm(forms.Form):
+    search_query = forms.CharField()
