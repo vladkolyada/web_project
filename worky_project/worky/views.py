@@ -1,16 +1,128 @@
+import time
+
+from django.forms import model_to_dict
+from django.http import JsonResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, authenticate, logout
-from .models import Client, Message, Newsletter, Admin, Post, Comment
+from rest_framework.authentication import TokenAuthentication
+from rest_framework.decorators import action
+from rest_framework.generics import ListCreateAPIView, UpdateAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.permissions import IsAuthenticatedOrReadOnly, IsAdminUser, IsAuthenticated
+from rest_framework.viewsets import ModelViewSet, ReadOnlyModelViewSet, GenericViewSet
+
+from .models import Client, Message, Newsletter, Admin, Post, Comment, ClientRestFramework
 from .forms import GetContactForm, FormForNewsletterDB, PostForm, CommentForm, SearchForm
 from django.contrib.auth.decorators import login_required
 import datetime
 from django.db.models import Q
+from rest_framework import generics, mixins
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
-d = datetime.datetime.now()
+from .permissions import IsAdminOrReadOnly
+from .serializers import ClientSerializer
+
+# d = datetime.datetime.now()
 # date_t = d.strftime("%d.%m.%Y %H:%M:%S")
 # date_d = d.strftime("%d.%m.%Y %H:%M:%S")
 
 # Create your views here.
+
+
+# class ClientViewSet(generics.ListAPIView):
+#    """
+#    API endpoint that allows users to be viewed or edited.
+#    """
+#    queryset = Post.objects.all()
+#    serializer_class = PostSerializer
+
+class ClientsAPIListPagination(PageNumberPagination):
+    page_size = 3
+    page_size_query_param = 'page_size'
+    max_page_size = 10000
+
+
+class ClientAPIList(ListCreateAPIView):
+    queryset = ClientRestFramework.objects.all()
+    serializer_class = ClientSerializer
+    permission_classes = (IsAuthenticatedOrReadOnly, )
+    pagination_class = ClientsAPIListPagination
+
+
+class ClientAPIUpdate(UpdateAPIView):
+    queryset = ClientRestFramework.objects.all()
+    serializer_class = ClientSerializer
+    permission_classes = (IsAuthenticated, )
+    # authentication_classes = (TokenAuthentication, )
+
+
+class ClientAPIDestroyView(RetrieveUpdateDestroyAPIView):
+    queryset = ClientRestFramework.objects.all()
+    serializer_class = ClientSerializer
+    permission_classes = (IsAdminOrReadOnly, )
+
+
+# class ClientViewSet(APIView):
+#     def get(self, request):
+#         c = Client.objects.all()
+#         return Response({'clients': ClientSerializer(c, many=True).data})
+#
+#     def post(self, request):
+#         serializer = ClientSerializer(data=request.data)
+#         serializer.is_valid(raise_exception=True)
+#         serializer.save()
+#         return Response({'client': serializer.data})
+#
+#     def put(self, request, *args, **kwargs):
+#         pk = kwargs.get("pk", None)
+#         if not pk:
+#             return Response({"error": "Method PUT not allowed"})
+#
+#         try:
+#             instance = Client.objects.get(pk=pk)
+#         except:
+#             return Response({"error": "Objects does not exists"})
+#
+#         serializer = ClientSerializer(data=request.data, instance=instance)
+#         serializer.is_valid(raise_exception=True)
+#         serializer.save()
+#         return Response({"client": serializer.data})
+#
+#     def delete(self, request, *args, **kwargs):
+#         pk = kwargs.get("pk", None)
+#         if not pk:
+#             return Response({"error": "Method PUT not allowed"})
+#
+#         try:
+#             instance = Client.objects.get(pk=pk)
+#         except:
+#             return Response({"error": "Objects does not exists"})
+#
+#         instance.delete()
+#         return Response({"client": "delete client" + str(pk)})
+
+# class ClientViewSet(mixins.CreateModelMixin,
+#                     mixins.RetrieveModelMixin,
+#                     mixins.UpdateModelMixin,
+#                     mixins.DestroyModelMixin,
+#                     mixins.ListModelMixin,
+#                     GenericViewSet):
+#     # queryset = Client.objects.all()
+#     serializer_class = ClientSerializer
+#
+#     # @action(methods=['get'], detail=True)
+#     # def messages(self, request, pk=None):
+#     #     message = Message.objects.get(pk=pk)
+#     #     return Response({"message": [m.message for m in message]})
+#
+#     def get_queryset(self):
+#         pk = self.kwargs.get("pk")
+#
+#         if not pk:
+#             return Client.objects.all()[:3]
+#
+#         return Client.objects.filter(pk=pk)
 
 
 def archive_fun(db):
@@ -164,7 +276,7 @@ def log_out_admin(request):
 def admin_profile(request, admin_username):
     admin = Admin.objects.get(username=admin_username)
     posts = Post.objects.filter(author=admin)[::-1]
-    recent_posts = Post.odjects.all()[::-1][:4]
+    recent_posts = Post.objects.all()[::-1][:4]
 
     search_form = SearchForm(request.POST)
     if request.method == 'POST':
@@ -263,8 +375,8 @@ def archive(request, month, year):
     else:
         search_form = SearchForm()
     return render(request, "worky/archive.html", context={
-        'archive': archive_posts,
-        'month': posts[0].date.strftime("%B"),
+        'posts': archive_posts,
+        'month': archive_posts[0].date.strftime("%B"),
         'year': year,
         'search_form': search_form,
         'recent_posts': recent_posts,

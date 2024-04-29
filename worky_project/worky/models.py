@@ -1,14 +1,22 @@
-import datetime
+from django.contrib.auth.models import User
 from django.db import models
 from werkzeug.security import generate_password_hash, check_password_hash
-
-d = datetime.datetime.now()
 
 
 class Client(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=60, null=False)
     email = models.EmailField(max_length=100, null=False, default="your_email@gmail.com")
+
+    def __str__(self):
+        return f"{self.name}({self.email})"
+
+
+class ClientRestFramework(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=60, null=False)
+    email = models.EmailField(max_length=100, null=False, default="your_email@gmail.com")
+    user = models.ForeignKey(User, verbose_name='User', on_delete=models.CASCADE)
 
     def __str__(self):
         return f"{self.name}({self.email})"

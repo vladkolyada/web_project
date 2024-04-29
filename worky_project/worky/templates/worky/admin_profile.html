@@ -1,62 +1,19 @@
 {% extends 'worky/base_page_without_contact_details.html' %}
+{% load widget_tweaks %}
 
 {% block title %}{{ admin.username }} profile{% endblock %}
 
 {% block content %}
 <link href="\static\styles\admin_pages_style\sty_admin_profile.css" rel="stylesheet" type="text/css">
-<link href="\static\styles\page_blog\style_for_blog_page.css" rel="stylesheet" type="text/css">
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-    var postsTexts = document.getElementsByClassName("post_text");
-    for(var i = 0; i < postsTexts.length; i++){
-        var postText = postsTexts[i].textContent;
-        var words = postText.split(" ");
-        if (words.length > 10) {
-            var limitedText = words.slice(0, 10).join(" ");
-            var newText = limitedText + "...";
-            postsTexts[i].innerHTML = newText;
-        }
-    }
-});
-</script>
+<link href="\static\styles\page_blog\sty_for_blog_page.css" rel="stylesheet" type="text/css">
 
 <h1 id="title_author"> Author: {{ admin.first_name }} {{ admin.last_name }} </h1>
 
 <div style="position: absolute; top: 200px; left: 350px;">
-    {% for post in posts %}
-        <div style="width: 700px; word-wrap: break-word;">
-            <a class="post_title" href="/worky/post/{{ post.id }}" style="text-decoration: none;"><h2 id="post_title">{{ post.title }}</h2></a><br>
-            <p id="admin_and_date_post">By <a href="admin_profile/{{ post.author.username }}">{{ post.author.username }}</a>. Posted {{ post.date }}</p>
-            <img class="post_img" src="{{ post.image.url }}" alt="..."><br>
-            <p style="width: 600px;" class="post_text">{{ post.text }}</p>
-        </div>
-        <hr>
-    {% endfor %}
+    {% include "worky/posts_list_blog.html" %}
 
-    <aside class="right_sidebar" action="{% url 'blog' %}">
-        <form method="post">
-            {% csrf_token %}
-            <input type="text" placeholder="Enter keyword search" id="input_to_search">
-            <button id="button_to_search" type="submit">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0 0 48 48" style="fill:#FFFFFF;">
-                    <path d="M 20.5 6 C 12.515556 6 6 12.515562 6 20.5 C 6 28.484438 12.515556 35 20.5 35 C 23.773158 35 26.788919 33.893018 29.220703 32.050781 L 38.585938 41.414062 A 2.0002 2.0002 0 1 0 41.414062 38.585938 L 32.050781 29.220703 C 33.893017 26.788918 35 23.773156 35 20.5 C 35 12.515562 28.484444 6 20.5 6 z M 20.5 10 C 26.322685 10 31 14.677319 31 20.5 C 31 23.295711 29.914065 25.820601 28.148438 27.697266 A 2.0002 2.0002 0 0 0 27.701172 28.144531 C 25.824103 29.912403 23.29771 31 20.5 31 C 14.677315 31 10 26.322681 10 20.5 C 10 14.677319 14.677315 10 20.5 10 z"></path>
-                </svg>
-            </button>
-        </form>
-        <hr><br>
-        <div id="recent_posts" style="position: relative; left: 5px;">
-            <h4>RECENT POSTS</h4><br>
-            {% for recent_post in recent_posts %}
-                <a class="recent_post_title" href="post/{{ recent_post.id }}">{{ recent_post.title }}</a><br><br><br>
-            {% endfor %}
-        </div> 
-        <hr><br>
-        <div id="archive">
-            <h4>ARCHIVE</h4><br>
-            {% for archive_url in archive_urls %}
-                <a class="archive_url_title" href="/worky/archive/{{ archive_url.year }}/{{ archive_url.month }}">{{ archive_url.all }}</a>
-            {% endfor %}
-        </div>
-    </aside>
+    {% include "worky/right_sidebar_part.html" %}
 </div>
+
+<script src="\static\js\src\periods_for_texts.js"></script>
 {% endblock %}

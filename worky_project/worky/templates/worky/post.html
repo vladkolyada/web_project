@@ -40,52 +40,30 @@
 
         <h2 style="font-family: Roboto-Regular;">{{ len_comments }} Comments</h2><br>
 
-        <div id="all_comments_of_post">
-            {% for comment in comments %}
-                <p class="user_data_comment"><b>{{ comment.client.name }}</b> <span class="date_comment">{{ comment.date }}</span></p>
-                <p class="text_comment">{{ comment.comment }}</p><br>
-            {% endfor %}
-        </div>
-
-        <hr><br><br>
-
-        <h3 style="font-family: Roboto-Regular;">Leave a comment</h3>
-
-        <p style="font-family: Montserrat;">Your email address will not be published. Required fields are marked *</p>
-
-        <form id="make_comment" action="/worky/post/{{ post.id }}#all_comments_of_post" method="post" style="position: relative; left: -418px;">
-            {% csrf_token %}
-            {% render_field form.comment placeholder="Comment *" id="expandingTextarea" style="width: 780px;"%}
-            {% render_field form.name placeholder="Name *" id="input_name" style="width: 780px;"%}
-            {% render_field form.email placeholder="E-mail *" id="input_email" style="width: 780px;"%}
-            <button type="submit" id="submit_to_comment">SUBMIT COMMENT</button>
-        </form><br><br><br><br><br><br>
-    
-        <aside class="right_sidebar" action="{% url 'blog' %}">
-            <form method="post">
-                {% csrf_token %}
-                {% render_field search_form.search_query placeholder="Enter keyword search" id="input_to_search" %}
-                <button id="button_to_search" type="submit">
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0 0 48 48" style="fill:#FFFFFF;">
-                        <path d="M 20.5 6 C 12.515556 6 6 12.515562 6 20.5 C 6 28.484438 12.515556 35 20.5 35 C 23.773158 35 26.788919 33.893018 29.220703 32.050781 L 38.585938 41.414062 A 2.0002 2.0002 0 1 0 41.414062 38.585938 L 32.050781 29.220703 C 33.893017 26.788918 35 23.773156 35 20.5 C 35 12.515562 28.484444 6 20.5 6 z M 20.5 10 C 26.322685 10 31 14.677319 31 20.5 C 31 23.295711 29.914065 25.820601 28.148438 27.697266 A 2.0002 2.0002 0 0 0 27.701172 28.144531 C 25.824103 29.912403 23.29771 31 20.5 31 C 14.677315 31 10 26.322681 10 20.5 C 10 14.677319 14.677315 10 20.5 10 z"></path>
-                    </svg>
-                </button>
-            </form>
-            <hr><br>
-            <div id="recent_posts" style="position: relative; left: 5px;">
-                <h4>RECENT POSTS</h4><br>
-                {% for recent_post in recent_posts %}
-                    <a class="recent_post_title" href="/worky/post/{{ recent_post.id }}">{{ recent_post.title }}</a><br><br><br>
-                {% endfor %}
-            </div> 
-            <hr><br>
-            <div id="archive" style="position: relative; left: 5px;">
-                <h4>ARCHIVE</h4><br>
-                {% for archive_url in archive_urls %}
-                    <a class="archive_url_title" href="/worky/archive/{{ archive_url.year }}/{{ archive_url.month }}">{{ archive_url.all }}</a>
+        <div>
+            <div id="all_comments_of_post">
+                {% for comment in comments %}
+                    <p class="user_data_comment"><b>{{ comment.client.name }}</b> <span class="date_comment">{{ comment.date }}</span></p>
+                    <p class="text_comment">{{ comment.comment }}</p><br>
                 {% endfor %}
             </div>
-        </aside>
+
+            <hr><br><br>
+
+
+            <h3 style="font-family: Roboto-Regular;">Leave a comment</h3>
+
+            <p style="font-family: Montserrat;">Your email address will not be published. Required fields are marked *</p>
+
+            <form id="make_comment" action="/worky/post/{{ post.id }}#all_comments_of_post" method="post" style="position: relative; left: -418px;">
+                {% csrf_token %}
+                {% render_field form.comment placeholder="Comment *" id="expandingTextarea" style="width: 780px;"%}
+                {% render_field form.name placeholder="Name *" id="input_name" style="width: 780px;"%}
+                {% render_field form.email placeholder="E-mail *" id="input_email" style="width: 780px;"%}
+                <button type="submit" id="submit_to_comment">SUBMIT COMMENT</button>
+            </form><br><br><br><br><br><br>
+        </div>    
+        {% include "worky/right_sidebar_part.html" %}
     </div>
 {% endblock %}
 

@@ -1,5 +1,4 @@
 {% extends "worky/base_page_without_contact_details.html" %}
-{% load widget_tweaks %}
 
 {% block title%}Blog{% endblock %}
 
@@ -46,71 +45,12 @@
     let docTitle = document.title;
     window.addEventListener("blur", () => {document.title = "Come back";})
     window.addEventListener("focus", () => {document.title = docTitle; })
-
-    document.addEventListener("DOMContentLoaded", function() {
-    var postsTexts = document.getElementsByClassName("post_text");
-    for(var i = 0; i < postsTexts.length; i++){
-        var postText = postsTexts[i].textContent;
-        var words = postText.split(" ");
-        if (words.length > 48) {
-            var limitedText = words.slice(0, 48).join(" ");
-            var newText = limitedText + "...";
-            postsTexts[i].innerHTML = newText;
-        }
-    }
-});
-
-
 </script>
 
 <div class="blog_content" style="position: absolute; top: 100px; left: 350px; width: 780px;;">
-    {% for post in posts %}
-        <div style="width: 700px; word-wrap: break-word;">
-            <h2><a href="post/{{ post.id }}" class="post_title">{{ post.title }}</a></h2><br>
-            <p id="admin_and_date_post">By <a href="admin_profile/{{ post.author.username }}">{{ post.author.username }}</a> Posted {{ post.date }}</p>
-            <img class="post_img" src="{{ post.image.url }}" alt="{{ post.title }}"><br>
-            <p class="post_text">{{ post.text }}</p>
-        </div>
-        <a href="post/{{ post.id }}#make_comment">
-            <div class="comment_button">
-                <svg version="1.1" class="comment_icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
-                    width="16px" height="16px" viewBox="796 796 200 200" enable-background="new 796 796 200 200" xml:space="preserve">
-                    <path d="M896.001,812.517c-55.23,0-100.001,31.369-100.001,70.071c0,18.018,9.72,34.439,25.67,46.851
-                        c3.721,2.895,5.446,7.685,4.424,12.286l-6.872,30.926c-0.498,2.242,0.419,4.561,2.316,5.855c1.896,1.295,4.391,1.304,6.297,0.022
-                        l36.909-24.804c3.238-2.176,7.17-3.074,11.032-2.516c6.532,0.945,13.294,1.448,20.226,1.448c55.227,0,99.999-31.37,99.999-70.069
-                        C996,843.886,951.229,812.517,896.001,812.517z"/>
-                </svg>
-            </div>
-        </a>
-        <br><br><br>
-        <hr>
-    {% endfor %}
+    {% include "worky/posts_list_blog.html" %}
 
-    <aside class="right_sidebar">
-        <form method="post">
-            {% csrf_token %}
-            {% render_field search_form.search_query placeholder="Enter keyword search" id="input_to_search" %}
-            <button id="button_to_search" type="submit">
-                <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="16" height="16" viewBox="0 0 48 48" style="fill:#FFFFFF;">
-                    <path d="M 20.5 6 C 12.515556 6 6 12.515562 6 20.5 C 6 28.484438 12.515556 35 20.5 35 C 23.773158 35 26.788919 33.893018 29.220703 32.050781 L 38.585938 41.414062 A 2.0002 2.0002 0 1 0 41.414062 38.585938 L 32.050781 29.220703 C 33.893017 26.788918 35 23.773156 35 20.5 C 35 12.515562 28.484444 6 20.5 6 z M 20.5 10 C 26.322685 10 31 14.677319 31 20.5 C 31 23.295711 29.914065 25.820601 28.148438 27.697266 A 2.0002 2.0002 0 0 0 27.701172 28.144531 C 25.824103 29.912403 23.29771 31 20.5 31 C 14.677315 31 10 26.322681 10 20.5 C 10 14.677319 14.677315 10 20.5 10 z"></path>
-                </svg>
-            </button>
-        </form>
-        <hr><br>
-        <div id="recent_posts" style="position: relative; left: 5px;">
-            <h4>RECENT POSTS</h4><br>
-            {% for recent_post in recent_posts %}
-                <a class="recent_post_title" href="post/{{ recent_post.id }}">{{ recent_post.title }}</a><br><br><br>
-            {% endfor %}
-        </div> 
-        <hr><br>
-        <div id="archive" style="position: relative; left: 5px;">
-            <h4>ARCHIVE</h4><br>
-            {% for archive_url in archive_urls %}
-                <a class="archive_url_title" href="/worky/archive/{{ archive_url.year }}/{{ archive_url.month }}">{{ archive_url.all }}</a>
-            {% endfor %}
-        </div>
-    </aside>
+    {% include "worky/right_sidebar_part.html" %}
 </div>
 
 <div class="end_block">
@@ -118,4 +58,5 @@
     <p id="end_block_text">© 2024 year</p>
 </div>
 
+<script src="\static\js\src\periods_for_texts.js"></script>
 {% endblock %}
