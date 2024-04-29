@@ -1,5 +1,6 @@
 import time
 
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 from django.forms import model_to_dict
 from django.http import JsonResponse
 from django.shortcuts import render, redirect
@@ -231,8 +232,19 @@ def services(request):
 
 
 def blog(request):
-    posts = Post.objects.all()[::-1]
-    recent_posts = posts[:4]
+    post_list = Post.objects.all()[::-1]
+    recent_posts = post_list[:4]
+    paginator = Paginator(post_list, 3)
+
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        # Якщо 'page' не є цілим числом, відобразіть першу сторінку
+        posts = paginator.page(1)
+    except EmptyPage:
+        # Якщо 'page' більше, ніж загальна кількість сторінок, відобразіть останню сторінку
+        posts = paginator.page(paginator.num_pages)
 
     search_form = SearchForm(request.POST)
     if request.method == 'POST':
@@ -245,7 +257,7 @@ def blog(request):
     return render(request, "worky/blog.html", {
         'posts': posts,
         'recent_posts': recent_posts,
-        'archive_urls': archive_fun(posts),
+        'archive_urls': archive_fun(post_list),
         'search_form': search_form,
         "home": False,
         "about": False,

@@ -19,3 +19,21 @@
     <br><br><br>
     <hr>
 {% endfor %}
+
+<div class="pagination">
+    <span class="step-links">
+        {% if posts.has_previous %}
+            <a href="?page=1">&laquo; Перша</a>
+            <a href="?page={{ posts.previous_page_number }}">Попередня</a>
+        {% endif %}
+
+        <span class="current">
+            Сторінка {{ posts.number }} з {{ posts.paginator.num_pages }}.
+        </span>
+
+        {% if posts.has_next %}
+            <a href="?page={{ posts.next_page_number }}">Наступна</a>
+            <a href="?page={{ posts.paginator.num_pages }}">Остання &raquo;</a>
+        {% endif %}
+    </span>
+</div>
