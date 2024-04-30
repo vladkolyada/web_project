@@ -138,6 +138,22 @@ def archive_fun(db):
     return archive_urls
 
 
+def pagination_fun(request, post_list):
+    paginator = Paginator(post_list, 3)
+
+    page = request.GET.get('page')
+    try:
+        posts = paginator.page(page)
+    except PageNotAnInteger:
+        # Якщо 'page' не є цілим числом, відобразіть першу сторінку
+        posts = paginator.page(1)
+    except EmptyPage:
+        # Якщо 'page' більше, ніж загальна кількість сторінок, відобразіть останню сторінку
+        posts = paginator.page(paginator.num_pages)
+
+    return posts
+
+
 def home(request):
     form = GetContactForm(request.POST)
 
@@ -234,17 +250,7 @@ def services(request):
 def blog(request):
     post_list = Post.objects.all()[::-1]
     recent_posts = post_list[:4]
-    paginator = Paginator(post_list, 3)
-
-    page = request.GET.get('page')
-    try:
-        posts = paginator.page(page)
-    except PageNotAnInteger:
-        # Якщо 'page' не є цілим числом, відобразіть першу сторінку
-        posts = paginator.page(1)
-    except EmptyPage:
-        # Якщо 'page' більше, ніж загальна кількість сторінок, відобразіть останню сторінку
-        posts = paginator.page(paginator.num_pages)
+    posts = pagination_fun(request, post_list=post_list)
 
     search_form = SearchForm(request.POST)
     if request.method == 'POST':
@@ -287,8 +293,9 @@ def log_out_admin(request):
 
 def admin_profile(request, admin_username):
     admin = Admin.objects.get(username=admin_username)
-    posts = Post.objects.filter(author=admin)[::-1]
-    recent_posts = Post.objects.all()[::-1][:4]
+    post_list = Post.objects.all()[::-1]
+    recent_posts = post_list[:4]
+    posts = pagination_fun(request, post_list=post_list)
 
     search_form = SearchForm(request.POST)
     if request.method == 'POST':
@@ -303,7 +310,7 @@ def admin_profile(request, admin_username):
         'form': search_form,
         'posts': posts,
         'recent_posts': recent_posts,
-        'archive_urls': archive_fun(posts),
+        'archive_urls': archive_fun(post_list),
     })
 
 
@@ -386,8 +393,9 @@ def archive(request, month, year):
                 return redirect(f'/worky/search/{search_query}')
     else:
         search_form = SearchForm()
+
     return render(request, "worky/archive.html", context={
-        'posts': archive_posts,
+        'posts': pagination_fun(request, post_list=archive_posts),
         'month': archive_posts[0].date.strftime("%B"),
         'year': year,
         'search_form': search_form,
