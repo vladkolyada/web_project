@@ -20,20 +20,36 @@
     <hr>
 {% endfor %}
 
-<div class="pagination">
+<div class="pagination" style="margin: auto; width: 50%; padding: 10px; text-align: center;">
     <span class="step-links">
         {% if posts.has_previous %}
-            <a href="?page=1">&laquo; Перша</a>
-            <a href="?page={{ posts.previous_page_number }}">Попередня</a>
+            <a href="?page=1" style="position: relative; top: 5px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                    <path d="m18.707 4.707-1.414-1.414L8.586 12l8.707 8.707 1.414-1.414L11.414 12l7.293-7.293zM5 3h2v18H5z"/>
+                </svg>
+            </a>
+            <a href="?page={{ posts.previous_page_number }}" style="position: relative; top: 5px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                    <path d="M15.293 3.293 6.586 12l8.707 8.707 1.414-1.414L9.414 12l7.293-7.293-1.414-1.414z"/>
+                </svg>
+            </a>
         {% endif %}
 
-        <span class="current">
-            Сторінка {{ posts.number }} з {{ posts.paginator.num_pages }}.
+        <span class="current" style="font-family: Montserrat; font-size: 18px;">
+            Сторінка {{ posts.number }} з {{ posts.paginator.num_pages }}
         </span>
 
         {% if posts.has_next %}
-            <a href="?page={{ posts.next_page_number }}">Наступна</a>
-            <a href="?page={{ posts.paginator.num_pages }}">Остання &raquo;</a>
+            <a href="?page={{ posts.next_page_number }}" style="position: relative; top: 5px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                    <path d="M7.293 4.707 14.586 12l-7.293 7.293 1.414 1.414L17.414 12 8.707 3.293 7.293 4.707z"/>
+                </svg>
+            </a>
+            <a href="?page={{ posts.paginator.num_pages }}" style="position: relative; top: 5px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                    <path d="M17 3h2v18h-2zM5.293 4.707 12.586 12l-7.293 7.293 1.414 1.414L15.414 12 6.707 3.293 5.293 4.707z"/>
+                </svg>
+            </a>
         {% endif %}
     </span>
 </div>
