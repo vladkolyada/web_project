@@ -28,6 +28,7 @@ from .serializers import ClientSerializer
 # date_t = d.strftime("%d.%m.%Y %H:%M:%S")
 # date_d = d.strftime("%d.%m.%Y %H:%M:%S")
 
+
 # Create your views here.
 
 
