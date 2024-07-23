@@ -212,32 +212,39 @@ def about(request):
 
 
 def services(request):
-    form = GetContactForm(request.POST)
-    form2 = FormForNewsletterDB(request.POST)
+    form = GetContactForm()
+    form2 = FormForNewsletterDB()
 
     if request.method == "POST":
-        if form.is_valid():
-            name = form.cleaned_data["name"]
-            email = form.cleaned_data["email"]
-            message = form.cleaned_data["message"]
-            email_for_newsletter = form2.cleaned_data["email_for_newsletter"]
+        form_type = request.POST.get("form_type")
 
-            client_filtering = Client.objects.filter(email=email).first()
+        if form_type == "newsletter":
+            form2 = FormForNewsletterDB(request.POST)
+            if form2.is_valid():
+                email_for_newsletter = form2.cleaned_data["email_for_newsletter"]
+                newsletter = Newsletter(email=email_for_newsletter)
+                newsletter.save()
+        else:
+            form = GetContactForm(request.POST)
+            if form.is_valid():
+                name = form.cleaned_data["name"]
+                email = form.cleaned_data["email"]
+                message = form.cleaned_data["message"]
 
-            try:
-                if client_filtering:
-                    client = client_filtering
-                else:
-                    client = Client(name=name, email=email)
-                    client.save()
-            except RuntimeWarning:
-                pass
+                client_filtering = Client.objects.filter(email=email).first()
 
-            client_message = Message(client=client, message=message)
-            client_message.save()
+                try:
+                    if client_filtering:
+                        client = client_filtering
+                    else:
+                        client = Client(name=name, email=email)
+                        client.save()
+                except RuntimeWarning:
+                    pass
 
-            newsletter = Newsletter(email=email_for_newsletter)
-            newsletter.save()
+                client_message = Message(client=client, message=message)
+                client_message.save()
+
     return render(request, "worky/services.html", {
         "form": form,
         "form2": form2,
@@ -423,5 +430,10 @@ def search(request, search_query):
         'search_query': search_query,
         'search_form': search_form,
     })
+
+
+def message_sent_successfully(request, ):
+    return render(request, "worky/message_sent_successfully.html")
+
 
 

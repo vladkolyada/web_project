@@ -146,11 +146,12 @@
     </div>
     <div class="latest_news_block">
         <div id="yellow_block">
-            <form action="{% url 'home' %}" method="post">
+            <form action="{% url 'services' %}" method="post">
                 <p id="small_words3_yb">SUBSCRIBE</p>
                 <p id="big_words3_yb">JOIN OUR NEWSLETTER</p>
                 <p id="text_newsletter">Good news & event details as well straight to your incoming mail!</p>
                 {% csrf_token %}
+                <input type="hidden" name="form_type" value="newsletter">
                 {% render_field form2.email_for_newsletter placeholder="YOUR EMAIL" id+="input_email_yellowblock" %}
                 <button type="submit" id="send_button_yellowblock"><span>SEND</span></button>
             </form>

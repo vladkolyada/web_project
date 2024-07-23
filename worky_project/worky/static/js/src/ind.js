@@ -1,8 +1,10 @@
 const textarea = document.getElementById('expandingTextarea');
+const messagesErrors = document.getElementById('message_errors');
 const stickyButton = document.getElementById('send_button');
 const endBlock = document.getElementsByClassName('end_block');
 
 textarea.addEventListener('input', () => {
+  messagesErrors.style.top = textarea.scrollHeight - textarea.clientHeight + 'px';
   stickyButton.style.top = textarea.scrollHeight - textarea.clientHeight + 'px';
   endBlock.style.top = textarea.scrollHeight - textarea.clientHeight + 'px';
 });

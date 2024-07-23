@@ -14,4 +14,5 @@ urlpatterns = [
     path('post/<int:post_id>', views.post, name='post'),
     path('archive/<int:year>/<int:month>', views.archive, name='archive'),
     path('search/<str:search_query>', views.search, name='search'),
+    path('message_was_sent', views.message_sent_successfully, name='message_sent_successfully')
 ]
