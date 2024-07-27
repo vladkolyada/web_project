@@ -20,27 +20,21 @@
 }
 
 .head_block {
-    width: fit-content; /* Встановлюємо ширину відповідно до вмісту */
-    max-width: 100%; /* Максимальна ширина */
-    position: relative;
-    margin: 0 auto; /* Центрування */
-    background-color: #3B3D42; /* Фоновий колір */
-    padding: 20px; /* Відступи всередині блоку */
-    display: flex; /* Встановлюємо flex для контейнера */
-    align-items: center; /* Вирівнювання по центру вертикально */
+    position: absolute;
+    width: 1903px;
+    height: 100px;
+    background: #3B3D42;
+    top: 0px;
+    left: 0px;
 }
 
 .logo {
-    margin-right: 20px; /* Відступ праворуч від логотипу */
+    position: absolute;
+    top: 25px;
+    left: 261px;
     width: 197px;
     height: 50px;
 }
-
-.links {
-    display: flex; /* Встановлюємо flex для контейнера посилань */
-    gap: 20px; /* Відступ між посиланнями */
-}
-
 
 #head_text {
     position: absolute;

@@ -5,7 +5,7 @@
     <title>{% block title %}Home{% endblock %} - Worky</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="\static\styles\style__.css" rel="stylesheet" type="text/css">
+    <link href="\static\styles\style1.css" rel="stylesheet" type="text/css">
     <link href="\static\styles\y_and_b_blocks.css" rel="stylesheet" type="text/css">
     <link href="\static\styles\portfolio_block.css" rel="stylesheet" type="text/css">
     <link href="\static\styles\contact_block.css" rel="stylesheet" type="text/css">
@@ -46,9 +46,11 @@
   </head>
   <body>
     <div class="head_block" >
-      <a href="/worky">
+      <div>
+        <a href="/worky">
           <img class="logo" src="\static\logo.png">
-      </a>  
+        </a>
+      </div>
       <div>
         {% if home == True %}
           <a href="/worky" id="head_text"> HOME </a>
@@ -74,7 +76,7 @@
           <a href="blog" id="head_text3_"> BLOG </a>
         {% endif %}
       </div>
-    </div>
+  
     {% block content %}
     <div class="start_block">
       <img src="\static\start_img.png" style="width: 1903px; height: 1288px;">
