@@ -19,6 +19,21 @@
   src: url(Roboto/Roboto-Light.ttf);
 }
 
+.head_block {
+  background: #3B3D42;
+  text-align: center;
+  height: 100px;
+}
+
+.logo {
+  position: relative;
+  top: 25px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 197px;
+  height: 50px;
+}
+
 .message_for_client {
   position: relative;
   top: 250px;

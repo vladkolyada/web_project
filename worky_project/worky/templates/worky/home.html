@@ -46,36 +46,20 @@
   </head>
   <body>
     <div class="head_block" >
-      <div>
+      <div style="width: 197px; height: 50px; position: relative; top: 25px; margin-left: 260px;">
         <a href="/worky">
-          <img class="logo" src="\static\logo.png">
+          <img class="logo" src="\static\logo.png" style="width: 197px; height: 50px;">
         </a>
       </div>
-      <div>
-        {% if home == True %}
-          <a href="/worky" id="head_text"> HOME </a>
-        {% else %}
-          <a href="/worky" id="head_text_"> HOME </a>
-        {% endif %}
-
-        {% if about == True %}
-          <a href="about" id="head_text1"> ABOUT </a>
-        {% else %}
-          <a href="about" id="head_text1_"> ABOUT </a>
-        {% endif %}
-
-        {% if services == True %}
-          <a href="services" id="head_text2"> SERVICES </a>
-        {% else %}
-          <a href="services" id="head_text2_"> SERVICES </a>
-        {% endif %}
-
-        {% if blog == True %}
-          <a href="blog" id="head_text3"> BLOG </a>
-        {% else %}
-          <a href="blog" id="head_text3_"> BLOG </a>
-        {% endif %}
-      </div>
+      <div class="select_bar">
+        <a href="/worky" class="{% if home == True %}active{% endif %}"> HOME </a>
+        <a href="about" class="{% if about == True %}active{% endif %}"> ABOUT </a>
+        <a href="services" class="{% if services == True %}active{% endif %}"> SERVICES </a>
+        <a href="blog" class="{% if blog == True %}active{% endif %}"> BLOG </a>
+    </div>
+    
+    
+    
   
     {% block content %}
     <div class="start_block">

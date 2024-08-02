@@ -174,6 +174,7 @@ def home(request):
 
             client_message = Message(client=client, message=message)
             client_message.save()
+            return redirect('/worky/message_was_sent')
     return render(request, "worky/home.html", {
         "form": form,
         "home": True,

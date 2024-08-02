@@ -1,0 +1,23 @@
+@media screen and (max-width: 1200px) {
+    body {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media screen and (max-width: 800px) {
+    body {
+            width: calc(50% - 20px);
+          }
+}
+
+@media screen and (max-width: 600px) {
+    body {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    body {
+        width: 100%;
+    }
+}
