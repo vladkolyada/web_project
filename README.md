@@ -54,7 +54,7 @@ The blog is a key element of the website, allowing the company to publish useful
 
 Framework: Django(Python)
 
-HTML, CSS, JavaScript(Node.js, React, Bootstrap)
+HTML, CSS, JavaScript(Node.js, React)
 
 
 ## For developers
